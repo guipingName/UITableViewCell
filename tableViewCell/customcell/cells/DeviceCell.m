@@ -14,7 +14,7 @@
     if (model.needUpdate) {
         self.subImageView1.hidden = NO;
         self.subImageView1.image = [[UIImage imageNamed:@"升级100%"] rt_tintedImageWithColor:[UIColor greenColor]];
-        if (model.isWarming) {
+        if (model.isWarning) {
             UIImage *warmingImage = [[UIImage imageNamed:@"报警"] rt_tintedImageWithColor:[UIColor redColor]];
             self.subImageView2.hidden = NO;
             self.subImageView2.image = warmingImage;
@@ -31,7 +31,7 @@
         }
     }
     else{
-        if (model.isWarming) {
+        if (model.isWarning) {
             UIImage *warmingImage = [[UIImage imageNamed:@"报警"] rt_tintedImageWithColor:[UIColor redColor]];
             self.subImageView1.hidden = NO;
             self.subImageView1.image = warmingImage;

@@ -65,7 +65,7 @@ typedef NS_ENUM(NSInteger, CellStyle) {
 @property (nonatomic, assign) BOOL isLowPower;
 
 /**是否报警提醒*/
-@property (nonatomic, assign) BOOL isWarming;
+@property (nonatomic, assign) BOOL isWarning;
 
 /**设备总数*/
 @property (nonatomic, assign) NSInteger total;

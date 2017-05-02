@@ -86,7 +86,7 @@
                "subTitle" : "在线",
                "title" : "网关 [1390]",
                "needUpdate":true,
-               "isWarming":true,
+               "isWarning":true,
                },
                {
                "cellstyle" : 7,
@@ -94,7 +94,7 @@
                "subTitle" : "在线",
                "title" : "网关 [1390]",
                "isLowPower":true,
-               "isWarming":true,
+               "isWarning":true,
                },
                
                {
@@ -104,7 +104,7 @@
                "title" : "网关 [1390]",
                "needUpdate":true,
                "isLowPower":true,
-               "isWarming":true,
+               "isWarning":true,
                },
                {
                "cellstyle" : 9,
@@ -118,7 +118,7 @@
                "subTitle" : "报警",
                "title" : "网关 [1284]",
                "warmingCount" : 3,
-               "isWarming" : true
+               "isWarning" : true
                },
                {
                "cellstyle" : 8,
@@ -128,7 +128,7 @@
                "title" : "红外感应器 [5782]",
                "needUpdate":false,
                "isLowPower":true,
-               "isWarming":false
+               "isWarning":false
                },
                {
                "DeviceType" : true,
@@ -140,7 +140,7 @@
                "total" : 4,
                "needUpdate":false,
                "isLowPower":false,
-               "isWarming":false
+               "isWarning":false
                },
                {
                "cellstyle" : 8,
@@ -151,7 +151,7 @@
                "title" : "悟能 [0058]",
                "needUpdate":false,
                "isLowPower":false,
-               "isWarming":false
+               "isWarning":false
                },
                {
                "cellstyle" : 8,
@@ -162,7 +162,7 @@
                "title" : "温湿度传感器 [2001]",
                "needUpdate":false,
                "isLowPower":false,
-               "isWarming":false
+               "isWarning":false
                },
                {
                "badge" : 4,
@@ -201,7 +201,7 @@
                "title" : "悟空增强版 [8973]",
                "needUpdate":false,
                "isLowPower":false,
-               "isWarming":false
+               "isWarning":false
                }
                ],
               [
@@ -332,7 +332,7 @@
                "title" : "网关 [1284]",
                "needUpdate":false,
                "isLowPower":false,
-               "isWarming":false
+               "isWarning":false
                },
                {
                "cellstyle" : 7,
@@ -342,7 +342,7 @@
                "title" : "网关 [1285]",
                "needUpdate":false,
                "isLowPower":false,
-               "isWarming":false
+               "isWarning":false
                },
                {
                "cellstyle" : 7,
@@ -352,7 +352,7 @@
                "title" : "网关 [1286]",
                "needUpdate":false,
                "isLowPower":false,
-               "isWarming":false
+               "isWarning":false
                },
                ],
               [
@@ -365,7 +365,7 @@
                "title" : "智能门磁 [5147]",
                "needUpdate":false,
                "isLowPower":false,
-               "isWarming":false
+               "isWarning":false
                },
                {
                "cellstyle" : 8,
@@ -376,7 +376,7 @@
                "title" : "智能门磁 [5148]",
                "needUpdate":false,
                "isLowPower":false,
-               "isWarming":false
+               "isWarning":false
                }
               ],
               ],

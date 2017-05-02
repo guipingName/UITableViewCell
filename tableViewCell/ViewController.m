@@ -112,7 +112,7 @@ typedef NS_ENUM(NSInteger, TableViewSection) {
     }
     else if (indexPath.section == TableViewSectionOther) {
         if (indexPath.row == 0 || indexPath.row == 1) { // 灯光
-            return 80;
+            return UIHEIGHT(170);
         }
         else if (indexPath.row == 2 || indexPath.row == 3) { // 电量
             return UIHEIGHT(120);
