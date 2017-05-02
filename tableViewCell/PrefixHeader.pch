@@ -1,0 +1,31 @@
+//
+//  PrefixHeader.pch
+//  tableViewCell
+//
+//  Created by guiping on 2017/4/21.
+//  Copyright © 2017年 pingui. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "GPModel.h"
+#import "Masonry.h"
+#import "UIImage+RTTint.h"
+
+#define WIDTH [UIScreen mainScreen].bounds.size.width
+#define HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#define UIWIDTH(pix)                       pix * WIDTH / 640
+#define UIHEIGHT(pix)                      pix * HEIGHT / 1136
+
+#define LABEL_RECT(labelText,limitW,limitH,option,font) [labelText boundingRectWithSize:CGSizeMake(limitW, limitH) options:option attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]} context:nil]
+
+#define THEME_COLOR [UIColor colorWithRed:0/255.0 green:174/255.0 blue:225/255.0 alpha:1];
+
+#define tableViewCell       @"tableViewCell"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
