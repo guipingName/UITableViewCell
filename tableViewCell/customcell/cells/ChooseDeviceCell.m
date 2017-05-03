@@ -13,7 +13,6 @@
 -(void)initWithData:(id)cellModel{
     [super initWithData:cellModel];
     GPModel *model = cellModel;
-    
     if (model.selected) {
         _rightButton.selected = YES;
     }
@@ -24,8 +23,7 @@
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        //[self.rightImageView removeFromSuperview];
-        self.rightImageView.hidden = YES;
+        [self.rightImageView removeFromSuperview];
         if (!_rightButton) {
             _rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
             [self.contentView addSubview:_rightButton];

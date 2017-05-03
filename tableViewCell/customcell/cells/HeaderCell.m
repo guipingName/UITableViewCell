@@ -20,7 +20,7 @@
     CGRect lbtitleR = LABEL_RECT(self.lbTitle.text, 0, 0, 1, 22);
     [self.lbTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.contentView.mas_centerY);
-        make.left.equalTo(self.bgImageView.mas_right).offset(10);
+        make.left.equalTo(self.contentView).offset(UIWIDTH(170));
         make.height.mas_equalTo(lbtitleR.size.height);
         make.width.mas_equalTo(lbtitleR.size.width + 0.5);
     }];
@@ -32,7 +32,7 @@
         CGRect lbSubTitleR = LABEL_RECT(_lbSubTitle.text, 0, 0, 1, 12);
         [self.lbTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView.mas_centerY).offset(-(lbtitleR.size.height + lbSubTitleR.size.height) / 2);
-            make.left.equalTo(self.bgImageView.mas_right).offset(5);
+            make.left.equalTo(self.contentView).offset(UIWIDTH(170));
             make.height.mas_equalTo(lbtitleR.size.height);
             make.width.mas_equalTo(lbtitleR.size.width + 0.5);
         }];
@@ -99,6 +99,13 @@
         self.backgroundColor = [UIColor colorWithRed:248/255.0 green:248/255.0 blue:248/255.0 alpha:1];
         self.lineView.backgroundColor = [UIColor colorWithRed:223/255.0 green:223/255.0 blue:223/255.0 alpha:1];
         self.bgImageView.backgroundColor = THEME_COLOR;
+        [self.bgImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.contentView).offset(UIWIDTH(32));
+            make.height.width.mas_equalTo(UIWIDTH(112));
+            make.centerY.equalTo(self.contentView.mas_centerY);
+        }];
+        self.bgImageView.layer.cornerRadius = UIWIDTH(56);
+        
         [self.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(self.contentView);
             make.height.mas_equalTo(1);
@@ -140,7 +147,6 @@
 }
 
 - (void) buttonClicked{
-    
     _rightButton.selected = !_rightButton.selected;
     if (_rightButton.selected) {
         tempModel.isClicked = YES;

@@ -8,30 +8,7 @@
 
 #import "BaseTableViewCell.h"
 
-#define LABEL_CELL                      @"LabelCell"
-#define TWO_LABEL_CELL                   @"TwoLabelCell"
-#define IMAGEVIEW_LABEL_CELL             @"ImageViewAndLabel"
-#define BASE_CELL                       @"BaseCell"
-#define TWO_IMAGEVIEWS_LABEL_CELL          @"TwoImageViewsLabelCell"
-#define ELECTRIC_CELL                   @"EletricCell"
-#define THREE_LABEL_CELL                @"ThreeLabelsCell"
-#define DEVICE_CELL                     @"DeviceCell"
-#define WARNING_CELL                    @"WarningCell"
-#define DEVICE_SUB_CELL                 @"DeviceSubCell"
-#define TIME_CELL                       @"WithTimeCell"
-#define DEVICE_LIST_CELL                @"DeviceListCell"
-#define LABEL_SWITCH_CELL               @"LabelAndSwitchCell"
-#define BUTTON_CELL                     @"ButtonCell"
-#define DEVICE_CHOOSE_CELL              @"ChooseDeviceCell"
-#define LOG_LIST_CELL                   @"LogListCell"
-#define HEADER_CELL                     @"HeaderCell"
-#define TIMER_CELL                      @"TimerCell"
-#define SLIDER_CELL                     @"SliderCell"
-#define LIGHT_CELL                      @"LightCell"
-
-
 @implementation BaseTableViewCell
-
 
 + (BaseTableViewCell *)createCellWithCellModel:(id)cellModel{
     GPModel *model = cellModel;
@@ -43,78 +20,78 @@
     return cell;
 }
 
--(void)initWithData:(id)cellModel{
-    
-}
-
 + (NSString *) getClassName:(CellStyle) cellStyle{
     NSString *className = nil;
     switch (cellStyle) {
         case CellStyleLabelCell:
-            className = LABEL_CELL;
+            className = @"LabelCell";
             break;
         case CellStyleTwoLabelCell:
-            className = TWO_LABEL_CELL;
+            className = @"TwoLabelCell";
             break;
         case CellStyleImageViewAndLabel:
-            className = IMAGEVIEW_LABEL_CELL;
+            className = @"ImageViewAndLabel";
             break;
         case CellStyleBaseCell:
-            className = BASE_CELL;
+            className = @"BaseCell";
             break;
         case CellStyleTwoImageViewsLabelCell:
-            className = TWO_IMAGEVIEWS_LABEL_CELL;
+            className = @"TwoImageViewsLabelCell";
             break;
         case CellStyleEletricCell:
-            className = ELECTRIC_CELL;
+            className = @"EletricCell";
             break;
         case CellStyleThreeLabelsCell:
-            className = THREE_LABEL_CELL;
+            className = @"ThreeLabelsCell";
             break;
         case CellStyleDeviceCell:
-            className = DEVICE_CELL;
+            className = @"DeviceCell";
             break;
         case CellStyleWarningCell:
-            className = WARNING_CELL;
+            className = @"WarningCell";
             break;
         case CellStyleDeviceSubCell:
-            className = DEVICE_SUB_CELL;
+            className = @"DeviceSubCell";
             break;
         case CellStyleWithTimeCell:
-            className = TIME_CELL;
+            className = @"WithTimeCell";
             break;
         case CellStyleDeviceListCell:
-            className = DEVICE_LIST_CELL;
+            className = @"DeviceListCell";
             break;
         case CellStyleLabelAndSwitchCell:
-            className = LABEL_SWITCH_CELL;
+            className = @"LabelAndSwitchCell";
             break;
         case CellStyleButtonCell:
-            className = BUTTON_CELL;
+            className = @"ButtonCell";
             break;
         case CellStyleChooseDeviceCell:
-            className = DEVICE_CHOOSE_CELL;
+            className = @"ChooseDeviceCell";
             break;
         case CellStyleLogListCell:
-            className = LOG_LIST_CELL;
+            className = @"LogListCell";
             break;
         case CellStyleHeaderCell:
-            className = HEADER_CELL;
+            className = @"HeaderCell";
             break;
         case CellStyleTimerCell:
-            className = TIMER_CELL;
+            className = @"TimerCell";
             break;
         case CellStyleSliderCell:
-            className = SLIDER_CELL;
+            className = @"SliderCell";
             break;
         case CellStyleLightCell:
-            className = LIGHT_CELL;
+            className = @"LightCell";
             break;
         default:
-            className = LABEL_CELL;
+            className = @"LabelCell";
             break;
     }
     return className;
+}
+
+-(void)initWithData:(id)cellModel{
+    
 }
 
 - (void)awakeFromNib {

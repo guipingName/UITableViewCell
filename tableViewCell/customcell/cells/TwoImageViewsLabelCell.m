@@ -8,6 +8,22 @@
 
 #import "TwoImageViewsLabelCell.h"
 
+typedef NS_ENUM(NSInteger, colorStyle) {
+    colorStyleOne = 1,
+    colorStyleTwo = 2,
+    colorStyleThree = 3,
+    colorStyleFour = 4,
+    colorStyleGrayColor = 5,
+    colorStyleRedColor = 6,
+    colorStyleGreenColor = 7,
+    colorStyleBlueColor = 8,
+    colorStyleCyanColor = 9,
+    colorStyleOrangeColor = 10,
+    colorStyleBrownColor = 11,
+    colorStylePurpleColor = 12,
+    colorStyleYellowColor = 13,
+};
+
 @implementation TwoImageViewsLabelCell
 
 -(void)initWithData:(id)cellModel{
@@ -18,9 +34,9 @@
     CGRect lbtitleR = LABEL_RECT(self.lbTitle.text, 0, 0, 1, 18);
     if (model.subCell) {
         [self.bgImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.contentView).offset(UIWIDTH(63));
             make.height.width.mas_equalTo(UIWIDTH(54));
             make.centerY.equalTo(self.contentView.mas_centerY);
+            make.centerX.equalTo(self.contentView.mas_left).offset(UIWIDTH(90));
         }];
         self.bgImageView.layer.cornerRadius = UIWIDTH(27);
         
@@ -46,7 +62,7 @@
         
         [self.lbTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(self.contentView.mas_centerY);
-            make.left.equalTo(self.contentView).offset(UIWIDTH(139));
+            make.left.equalTo(self.contentView).offset(UIWIDTH(169));
             make.height.mas_equalTo(lbtitleR.size.height);
             make.width.mas_equalTo(lbtitleR.size.width + 0.5);
         }];
@@ -111,21 +127,7 @@
     return color;
 }
 
-typedef NS_ENUM(NSInteger, colorStyle) {
-    colorStyleOne = 1,
-    colorStyleTwo = 2,
-    colorStyleThree = 3,
-    colorStyleFour = 4,
-    colorStyleGrayColor = 5,
-    colorStyleRedColor = 6,
-    colorStyleGreenColor = 7,
-    colorStyleBlueColor = 8,
-    colorStyleCyanColor = 9,
-    colorStyleOrangeColor = 10,
-    colorStyleBrownColor = 11,
-    colorStylePurpleColor = 12,
-    colorStyleYellowColor = 13,
-};
+
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {

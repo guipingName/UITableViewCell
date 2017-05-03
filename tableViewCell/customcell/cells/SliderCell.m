@@ -12,6 +12,7 @@
     GPModel *tempModel;
 }
 
+
 -(void)initWithData:(id)cellModel{
     GPModel *model = cellModel;
     tempModel = model;
@@ -40,11 +41,10 @@
             [self.contentView addSubview:_slider];
             [_slider mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.centerY.equalTo(self.contentView.mas_centerY);
-                make.left.equalTo(self.bgImageView.mas_right).offset(10);
-                make.right.equalTo(self.rightImageView.mas_left).offset(-10);
+                make.left.equalTo(self.bgImageView.mas_right).offset(5);
+                make.right.equalTo(self.rightImageView.mas_left).offset(-5);
                 make.height.mas_equalTo(10);
             }];
-            
             [_slider addTarget:self action:@selector(sliderChanged:) forControlEvents:UIControlEventValueChanged];
             [_slider addTarget:self action:@selector(sliderTouchOut:) forControlEvents:UIControlEventTouchUpInside];
         }

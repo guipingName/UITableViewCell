@@ -12,10 +12,14 @@
 #import "ChooseDeviceCell.h"
 #import "HeaderCell.h"
 
+#define BASE_TAG    500
+#define DEVICE_TAG  501
+#define OTHER_TAG   502
 
 #define SET_TIME     @"定时类"
 #define NET_GATE    @"网关"
 #define THE_DOOR    @"智能门磁"
+
 
 
 typedef NS_ENUM(NSInteger, TableViewSection) {
@@ -25,6 +29,39 @@ typedef NS_ENUM(NSInteger, TableViewSection) {
     TableViewSectionTime,
     TableViewSectionNet,
     TableViewSectionDoor,
+};
+
+typedef NS_ENUM(NSInteger, SectionBase) {
+    SectionBaseZero,
+    SectionBaseOne,
+    SectionBaseTwo,
+    SectionBaseThree,
+    SectionBaseFour,
+    SectionBaseFive,
+    SectionBaseSix,
+    SectionBaseSeven,
+};
+
+typedef NS_ENUM(NSInteger, SectionOther) {
+    SectionOtherSingleLight,
+    SectionOtherLights,
+    SectionOtherElectricOdd,
+    SectionOtherElectricEven,
+    SectionOtherDevice,
+    SectionOtherDeviceType,
+    SectionOtherLogOne,
+    SectionOtherLogTwo,
+};
+
+typedef NS_ENUM(NSInteger, SectionTime) {
+    SectionTimeTimerNomal,
+    SectionTimeTimerHigh,
+    SectionTimeTimerDevice,
+    SectionTimeTimerTry,
+    SectionTimeElectricOn,
+    SectionTimeElectricOnAndOff,
+    SectionTimeLightOn,
+    SectionTimeLogihtOff,
 };
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -92,12 +129,12 @@ typedef NS_ENUM(NSInteger, TableViewSection) {
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == TableViewSectionBase) {
-        if (indexPath.row == 7) {
+        if (indexPath.row == SectionBaseSeven) {
             return UIHEIGHT(160);
         }
         return 50;
     }
-    if (indexPath.section == TableViewSectionNet ||
+    else if (indexPath.section == TableViewSectionNet ||
         indexPath.section == TableViewSectionDoor) {
         return UIHEIGHT(140);
     }
@@ -105,34 +142,34 @@ typedef NS_ENUM(NSInteger, TableViewSection) {
         if (indexPath.row == 0) {
             return UIHEIGHT(284);
         }
-        else if (indexPath.row == 8 || indexPath.row == 9 || indexPath.row == 10) {
+        else if (indexPath.row == 15 || indexPath.row == 16 || indexPath.row == 17) {
             return UIHEIGHT(130);
         }
         return UIHEIGHT(160);
     }
     else if (indexPath.section == TableViewSectionOther) {
-        if (indexPath.row == 0 || indexPath.row == 1) { // 灯光
-            return UIHEIGHT(170);
+        if (indexPath.row == SectionOtherSingleLight || indexPath.row == SectionOtherLights) { // 灯光
+            return 80;
         }
-        else if (indexPath.row == 2 || indexPath.row == 3) { // 电量
+        else if (indexPath.row == SectionOtherElectricOdd || indexPath.row == SectionOtherElectricEven) { // 电量
             return UIHEIGHT(120);
         }
-        else if (indexPath.row == 4 || indexPath.row == 5) {
+        else if (indexPath.row == SectionOtherDevice || indexPath.row == SectionOtherDeviceType) {
             return UIHEIGHT(320);
         }
         return 100;
     }
     else if (indexPath.section == TableViewSectionTime) {
-        if (indexPath.row == 4) { // 通电
+        if (indexPath.row == SectionTimeElectricOn) { // 通电
             return UIHEIGHT(110);
         }
-        else if (indexPath.row == 5){ // 通电、断电
+        else if (indexPath.row == SectionTimeElectricOnAndOff){ // 通电、断电
             return UIHEIGHT(170);
         }
-        else if (indexPath.row == 6 || indexPath.row == 7){ // 灯光定时
+        else if (indexPath.row == SectionTimeLightOn || indexPath.row == SectionTimeLogihtOff){ // 灯光定时
             return UIHEIGHT(140);
         }
-        return 60;
+        return UIHEIGHT(140);
     }
     else{
         return 80;
@@ -149,43 +186,26 @@ typedef NS_ENUM(NSInteger, TableViewSection) {
 }
 
 
-
-//- (CGFloat) tableView:(UITableView *)tableView estimatedHeightForHeaderInSection:(NSInteger)section{
-//    return 40;
-//}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 2;
-}
-
-- (UILabel *) createLabel:(NSString *) title{
-    UILabel *label = [[UILabel alloc] init];
-    label.backgroundColor = [UIColor colorWithRed:128/255.0 green:128/255.0 blue:128/255.0 alpha:1];
-    label.text = title;
-    label.textAlignment = NSTextAlignmentCenter;
-    label.userInteractionEnabled = YES;
-    return label;
 }
 
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     if (section == TableViewSectionBase) {
-        UILabel *label = [self createLabel:@"基本单元格"];
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(base:)];
-        [label addGestureRecognizer:tap];
-        return label;
+        UIButton *button = [self createButtonWithTitle:@"基本单元格"];
+        button.tag = BASE_TAG;
+        return button;
     }
     else if (section == TableViewSectionDevice) {
-        UILabel *label = [self createLabel:@"设备"];
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(device:)];
-        [label addGestureRecognizer:tap];
-        return label;
+        UIButton *button = [self createButtonWithTitle:@"设备"];
+        button.tag = DEVICE_TAG;
+        return button;
     }
     else if (section == TableViewSectionOther) {
-        UILabel *label = [self createLabel:@"其它"];
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(other:)];
-        [label addGestureRecognizer:tap];
-        return label;
+        UIButton *button = [self createButtonWithTitle:@"其它"];
+        button.tag = OTHER_TAG;
+        return button;
     }
     else if (section == TableViewSectionTime) {
         HeaderCell *cell = [self createHederView:section - TableViewSectionTime];
@@ -233,6 +253,17 @@ typedef NS_ENUM(NSInteger, TableViewSection) {
     }
 }
 
+- (UIButton *) createButtonWithTitle:(NSString *) title{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:title forState:UIControlStateNormal];
+    button.backgroundColor  =[UIColor grayColor];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont systemFontOfSize:16];
+    [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    return button;
+}
+
+
 -(HeaderCell *) createHederView:(NSInteger) number{
     GPModel *model = headerModel[number];
     model.cellstyle = CellStyleHeaderCell;
@@ -241,6 +272,10 @@ typedef NS_ENUM(NSInteger, TableViewSection) {
         [self foldOrUnfold:tempModel orIndex:0];
     };
     return view;
+}
+
+- (void) buttonClicked:(UIButton *) sender{
+    [self foldOrUnfold:nil orIndex:sender.tag - BASE_TAG];
 }
 
 - (void) foldOrUnfold:(GPModel *) model orIndex:(NSInteger) index{
@@ -255,25 +290,19 @@ typedef NS_ENUM(NSInteger, TableViewSection) {
         else if ([model.title isEqualToString:THE_DOOR]){
             tempIndex = TableViewSectionDoor;
         }
+        else{
+            return;
+        }
     }
     else{
         tempIndex = index;
+        if (tempIndex > foldArray.count - 1) {
+            return;
+        }
     }
     NSInteger a = [foldArray[tempIndex] integerValue];
     [foldArray replaceObjectAtIndex:tempIndex withObject:@(!a)];
     [myTableView reloadData];
-}
-
-- (void) base:(UITapGestureRecognizer *) sender{
-    [self foldOrUnfold:nil orIndex:TableViewSectionBase];
-}
-
-- (void) device:(UITapGestureRecognizer *) sender{
-    [self foldOrUnfold:nil orIndex:TableViewSectionDevice];
-}
-
-- (void) other:(UITapGestureRecognizer *) sender{
-    [self foldOrUnfold:nil orIndex:TableViewSectionOther];
 }
 
 

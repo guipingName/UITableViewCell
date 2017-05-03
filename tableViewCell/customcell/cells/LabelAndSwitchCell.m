@@ -91,9 +91,7 @@
             _valueChanged(NO);
         }
     }
-    if (tempModel.isLight) {
-        [self changeColor:sender];
-    }
+    [self changeColor:sender];
 }
 
 - (void) moreRows:(GPModel *) model{
@@ -102,7 +100,6 @@
     CGRect lbDateR = LABEL_RECT(_lbDate.text, 0, 0, 1, 12);
     
     if (model.isLight) {
-        // 如果是灯
         lightImageView.hidden = NO;
         if (model.backGroundColor == 1) {
             lightImageView.image = [[UIImage imageNamed:@"LEDE定时器-无效灯"] rt_tintedImageWithColor:[UIColor orangeColor]];
@@ -129,7 +126,7 @@
                 make.width.mas_equalTo(lbSubTitleR.size.width + 0.5);
             }];
         }
-        [self changeColor:_rightSwitch];
+        
     }
     else{
         if (model.timerMode == 1) {
@@ -167,6 +164,7 @@
         make.height.mas_equalTo(lbDateR.size.height);
         make.width.mas_equalTo(lbDateR.size.width + 0.5);
     }];
+    [self changeColor:_rightSwitch];
 }
 
 /**灯的定时器是否启用  调整颜色*/
@@ -175,18 +173,24 @@
         self.backgroundColor = [UIColor whiteColor];
         self.lbSubtitle.textColor = [UIColor blackColor];
         self.lbDate.textColor = [UIColor blackColor];
-        if (tempModel.backGroundColor == 1) {
-            lightImageView.image = [lightImageView.image rt_tintedImageWithColor:[UIColor orangeColor]];
-        }
-        else{
-            lightImageView.image = [lightImageView.image rt_tintedImageWithColor:[UIColor blueColor]];
+        self.lbTitle.textColor = [UIColor blackColor];
+        if (tempModel.isLight) {
+            if (tempModel.backGroundColor == 1) {
+                lightImageView.image = [lightImageView.image rt_tintedImageWithColor:[UIColor orangeColor]];
+            }
+            else{
+                lightImageView.image = [lightImageView.image rt_tintedImageWithColor:[UIColor blueColor]];
+            }
         }
     }
     else{
         self.backgroundColor = [UIColor colorWithRed:237/255.0 green:237/255.0 blue:237/255.0 alpha:1];
         self.lbSubtitle.textColor = [UIColor colorWithRed:128/255.0 green:128/255.0 blue:128/255.0 alpha:1];;
-        self.lbDate.textColor = [UIColor colorWithRed:128/255.0 green:128/255.0 blue:128/255.0 alpha:1];;
-        lightImageView.image = [UIImage imageNamed:@"LEDE定时器-无效灯"];
+        self.lbDate.textColor = [UIColor colorWithRed:128/255.0 green:128/255.0 blue:128/255.0 alpha:1];
+        self.lbTitle.textColor = [UIColor colorWithRed:128/255.0 green:128/255.0 blue:128/255.0 alpha:1];;
+        if (tempModel.isLight) {
+            lightImageView.image = [UIImage imageNamed:@"LEDE定时器-无效灯"];
+        }
     }
 }
 /*

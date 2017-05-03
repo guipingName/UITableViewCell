@@ -20,7 +20,7 @@
     CGRect lbTitleR = LABEL_RECT(self.lbTitle.text, UIWIDTH(300), 40, 1, 15);
     [self.lbTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.contentView.mas_centerY);
-        make.left.equalTo(self.bgImageView.mas_right).offset(UIWIDTH(50));
+        make.left.equalTo(self.contentView).offset(UIWIDTH(170));
         make.width.mas_equalTo(lbTitleR.size.width + 0.5);
         make.height.mas_equalTo(lbTitleR.size.height);
     }];
@@ -31,7 +31,7 @@
         
         [self.lbTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.bottom.equalTo(self.contentView.mas_centerY).offset(-UIHEIGHT(5));
-            make.left.equalTo(self.bgImageView.mas_right).offset(UIWIDTH(50));
+            make.left.equalTo(self.contentView).offset(UIWIDTH(170));
             make.width.mas_equalTo(lbTitleR.size.width + 0.5);
             make.height.mas_equalTo(lbTitleR.size.height);
         }];
@@ -58,9 +58,9 @@
         [self.subImageView3 removeFromSuperview];
         
         [self.bgImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.contentView).offset(UIWIDTH(63));
             make.height.width.mas_equalTo(27);
             make.centerY.equalTo(self.contentView.mas_centerY);
+            make.centerX.equalTo(self.contentView.mas_left).offset(UIWIDTH(90));
         }];
         self.bgImageView.layer.cornerRadius = 13.5;
         self.bgImageView.backgroundColor = [UIColor whiteColor];

@@ -19,30 +19,35 @@
     self.rightImageView.image = [UIImage imageNamed:@"标签_右箭头"];
     
     self.lbTitle.textColor = [UIColor whiteColor];
-    _lbSubTitle.textColor = [UIColor whiteColor];
-    self.lbTitle.font = [UIFont systemFontOfSize:22];
-    CGRect lbTitleR = LABEL_RECT(self.lbTitle.text, 0, 0, 1, 22);
+    _lbSubTitle.textColor = [UIColor colorWithRed:145/255.0 green:224/255.0 blue:212/255.0 alpha:1];
+    self.lbTitle.font = [UIFont systemFontOfSize:30];
+    CGRect lbTitleR = LABEL_RECT(self.lbTitle.text, 0, 0, 1, 30);
     CGRect lbSubTitleR = LABEL_RECT(_lbSubTitle.text, 0, 0, 1, 14);
     [self.lbTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView.mas_centerY).offset(-UIHEIGHT(30));
         make.centerX.equalTo(self.contentView.mas_centerX);
+        make.centerY.equalTo(self.contentView.mas_centerY).offset(-UIHEIGHT(4));
         make.width.mas_equalTo(lbTitleR.size.width + 0.5);
         make.height.mas_equalTo(lbTitleR.size.height);
     }];
     [_lbSubTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView.mas_centerY).offset(UIHEIGHT(58));
+        make.top.equalTo(self.lbTitle.mas_bottom).offset(UIHEIGHT(30));
         make.centerX.equalTo(self.contentView.mas_centerX);
         make.height.mas_equalTo(lbSubTitleR.size.height);
         make.width.mas_equalTo(lbSubTitleR.size.width + 0.5);
-    }];  
+    }];
+    
+    [self.rightImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.height.width.mas_equalTo(26);
+        make.centerY.equalTo(self.contentView.mas_centerY).offset(-UIHEIGHT(4));
+        make.right.equalTo(self.contentView).offset(-UIWIDTH(22));
+    }];
 }
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        
         [self.bgImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.contentView);
-            make.bottom.equalTo(self.contentView).offset(-UIHEIGHT(8));
+            make.bottom.mas_equalTo(self.contentView);
+            make.top.equalTo(self.contentView).offset(UIHEIGHT(8));
             make.left.equalTo(self.contentView.mas_left).offset(UIWIDTH(36));
             make.width.mas_equalTo(UIWIDTH(150));
         }];
@@ -58,9 +63,9 @@
         }
         
         [self.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.contentView);
             make.width.equalTo(self.contentView);
             make.height.mas_equalTo(UIHEIGHT(8));
-            make.bottom.equalTo(self.contentView.mas_bottom);
         }];
         self.lineView.backgroundColor = [UIColor whiteColor];
     }

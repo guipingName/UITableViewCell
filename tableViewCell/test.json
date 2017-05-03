@@ -165,6 +165,17 @@
                "isWarning":false
                },
                {
+               "cellstyle" : 13,
+               "imageName" : "增强悟空_标签",
+               "humidness" : "39%",
+               "subTitle" : "待机",
+               "temperature" : 27,
+               "title" : "悟空增强版 [8973]",
+               "needUpdate":false,
+               "isLowPower":false,
+               "isWarning":false
+               },
+               {
                "badge" : 4,
                "cellstyle" : 10,
                "imageName" : "红外传感器_标签",
@@ -191,17 +202,6 @@
                "selected" : false,
                "subTitle" : "布防",
                "title" : "智能门磁 [0024]"
-               },
-               {
-               "cellstyle" : 13,
-               "imageName" : "增强悟空_标签",
-               "humidness" : "39%",
-               "subTitle" : "待机",
-               "temperature" : 27,
-               "title" : "悟空增强版 [8973]",
-               "needUpdate":false,
-               "isLowPower":false,
-               "isWarning":false
                }
                ],
               [
@@ -219,19 +219,19 @@
                },
                {
                "cellstyle" : 11,
-               "electric" : "9.8",
                "electricfeng" : "50%",
                "electricgu" : "35%",
-               "month" : 5,
-               "imageName" : "网关S3_168_168"
+               "month" : 6,
+               "imageName" : "网关S3_168_168",
+               "monthElectrics":[4,0,0,0,0,0,0, 0,0,0,0,2,0,0, 0,0,0,0,3,0,0, 0,0,0,0,0,0,0,5,0]
                },
                {
                "cellstyle" : 11,
-               "electric" : "13.2",
                "electricfeng" : "50%",
                "electricgu" : "50%",
-               "month" : 6,
-               "imageName" : "网关S3_168_168"
+               "month" : 5,
+               "imageName" : "网关S3_168_168",
+               "monthElectrics":[0,0,0,0,0,0,0, 0,0,0,0,4,0,0, 0,0,0,0,2,0,0, 0,0,0,0,0,0,0,0,0]
                },
                {
                "cellstyle" : 12,
@@ -279,7 +279,7 @@
                {
                "cellstyle" : 17,
                "imageName" : "定时器_定时",
-               "title" : "如果设置定时器到点了，就控制家电",
+               "title" : "定时器到点了",
                "isClicked":false
                },
                {

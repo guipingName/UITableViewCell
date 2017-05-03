@@ -52,6 +52,9 @@ typedef NS_ENUM(NSInteger, CellStyle) {
 /**颜色数组*/
 @property (nonatomic,strong) NSArray *colors;
 
+/**电量数组*/
+@property (nonatomic,strong) NSArray *monthElectrics;
+
 /**设备Id??*/
 @property (nonatomic,copy) NSString *deviceId;
 
@@ -72,9 +75,6 @@ typedef NS_ENUM(NSInteger, CellStyle) {
 
 /**显示图片名称*/
 @property (nonatomic,copy) NSString *imageName;
-
-/**设备的电量*/
-@property (nonatomic,copy) NSString *electric;
 
 /**峰电电量*/
 @property (nonatomic,copy) NSString *electricfeng;
