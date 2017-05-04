@@ -91,7 +91,9 @@
             _valueChanged(NO);
         }
     }
-    [self changeColor:sender];
+    if (tempModel.timerSetted) {
+        [self changeColor:sender];
+    }
 }
 
 - (void) moreRows:(GPModel *) model{

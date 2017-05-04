@@ -19,7 +19,7 @@
     self.bgImageView.image = [UIImage imageNamed:model.imageName];
     CGRect lbtitleR = LABEL_RECT(self.lbTitle.text, 0, 0, 1, 22);
     [self.lbTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.contentView.mas_centerY);
+        make.top.equalTo(self.contentView.mas_centerY).offset(-UIHEIGHT(6));
         make.left.equalTo(self.contentView).offset(UIWIDTH(170));
         make.height.mas_equalTo(lbtitleR.size.height);
         make.width.mas_equalTo(lbtitleR.size.width + 0.5);

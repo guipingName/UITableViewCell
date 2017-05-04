@@ -16,7 +16,7 @@
 #define DEVICE_TAG  501
 #define OTHER_TAG   502
 
-#define SET_TIME     @"定时类"
+#define SET_TIME    @"定时类"
 #define NET_GATE    @"网关"
 #define THE_DOOR    @"智能门磁"
 
@@ -64,13 +64,22 @@ typedef NS_ENUM(NSInteger, SectionTime) {
     SectionTimeLogihtOff,
 };
 
+
+typedef NS_ENUM(NSInteger, SectionDevice) {
+    SectionDeviceLight = 0,
+    SectionDeviceHistoryCount = 16,
+    SectionDeviceHistory = 17,
+    SectionDeviceHistoryNone = 18,
+};
+
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
-    UITableView *myTableView;
     NSMutableArray *dataArray;
     NSMutableArray *foldArray;
     NSMutableArray *headerModel;
 }
+
+@property (nonatomic, strong) UITableView *myTableView;
 
 @end
 
@@ -79,13 +88,13 @@ typedef NS_ENUM(NSInteger, SectionTime) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, WIDTH, HEIGHT - 20) style:UITableViewStylePlain];
-    [self.view addSubview:myTableView];
-    myTableView.backgroundColor = [UIColor whiteColor];
-    myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    myTableView.dataSource = self;
-    myTableView.delegate = self;
+    
     [self loadData];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (void) loadData{
@@ -109,11 +118,12 @@ typedef NS_ENUM(NSInteger, SectionTime) {
     }
     foldArray = [NSMutableArray array];
     for (int i=0; i<dataArray.count; i++) {
-        NSInteger a = 0;
-        [foldArray addObject:@(a)];
+        BOOL isUnfold = NO;
+        [foldArray addObject:@(isUnfold)];
     }
     
     [self createHeader];
+    [self.myTableView reloadData];
 }
 
 #pragma mark --------------- UITableViewDelegate ----------------
@@ -123,8 +133,7 @@ typedef NS_ENUM(NSInteger, SectionTime) {
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     NSArray *array = dataArray[section];
-    NSInteger a = [foldArray[section] integerValue];
-    return a ? array.count : 0;
+    return [foldArray[section] boolValue] ? array.count : 0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -139,35 +148,37 @@ typedef NS_ENUM(NSInteger, SectionTime) {
         return UIHEIGHT(140);
     }
     else if (indexPath.section == TableViewSectionDevice) {
-        if (indexPath.row == 0) {
+        if (indexPath.row == SectionDeviceLight) {
             return UIHEIGHT(284);
         }
-        else if (indexPath.row == 15 || indexPath.row == 16 || indexPath.row == 17) {
+        else if (indexPath.row == SectionDeviceHistoryCount ||
+                 indexPath.row == SectionDeviceHistory ||
+                 indexPath.row == SectionDeviceHistoryNone) {
             return UIHEIGHT(130);
         }
         return UIHEIGHT(160);
     }
     else if (indexPath.section == TableViewSectionOther) {
-        if (indexPath.row == SectionOtherSingleLight || indexPath.row == SectionOtherLights) { // 灯光
+        if (indexPath.row == SectionOtherSingleLight ||
+            indexPath.row == SectionOtherLights) {
             return 80;
         }
-        else if (indexPath.row == SectionOtherElectricOdd || indexPath.row == SectionOtherElectricEven) { // 电量
+        else if (indexPath.row == SectionOtherElectricOdd ||
+                 indexPath.row == SectionOtherElectricEven) {
             return UIHEIGHT(120);
         }
-        else if (indexPath.row == SectionOtherDevice || indexPath.row == SectionOtherDeviceType) {
+        else if (indexPath.row == SectionOtherDevice ||
+                 indexPath.row == SectionOtherDeviceType) {
             return UIHEIGHT(320);
         }
         return 100;
     }
     else if (indexPath.section == TableViewSectionTime) {
-        if (indexPath.row == SectionTimeElectricOn) { // 通电
+        if (indexPath.row == SectionTimeElectricOn) {
             return UIHEIGHT(110);
         }
-        else if (indexPath.row == SectionTimeElectricOnAndOff){ // 通电、断电
+        else if (indexPath.row == SectionTimeElectricOnAndOff){
             return UIHEIGHT(170);
-        }
-        else if (indexPath.row == SectionTimeLightOn || indexPath.row == SectionTimeLogihtOff){ // 灯光定时
-            return UIHEIGHT(140);
         }
         return UIHEIGHT(140);
     }
@@ -230,7 +241,7 @@ typedef NS_ENUM(NSInteger, SectionTime) {
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     GPModel *model = dataArray[indexPath.section][indexPath.row];
-    UITableViewCell *cell = [myTableView cellForRowAtIndexPath:indexPath];
+    UITableViewCell *cell = [_myTableView cellForRowAtIndexPath:indexPath];
     if (model.cellstyle == CellStyleTwoLabelCell) {
         if (model.needUpdate) {
             model.progress = 0.2;
@@ -253,6 +264,21 @@ typedef NS_ENUM(NSInteger, SectionTime) {
     }
 }
 
+#pragma mark --------------- 懒加载 ----------------
+-(UITableView *)myTableView{
+    if (!_myTableView) {
+        _myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, WIDTH, HEIGHT - 20) style:UITableViewStylePlain];
+        [self.view addSubview:_myTableView];
+        _myTableView.backgroundColor = [UIColor whiteColor];
+        _myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _myTableView.dataSource = self;
+        _myTableView.delegate = self;
+    }
+    return _myTableView;
+}
+
+#pragma mark --------------- 创建视图 ----------------
+/**创建组头*/
 - (UIButton *) createButtonWithTitle:(NSString *) title{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:title forState:UIControlStateNormal];
@@ -263,7 +289,7 @@ typedef NS_ENUM(NSInteger, SectionTime) {
     return button;
 }
 
-
+/**创建组头*/
 -(HeaderCell *) createHederView:(NSInteger) number{
     GPModel *model = headerModel[number];
     model.cellstyle = CellStyleHeaderCell;
@@ -300,12 +326,12 @@ typedef NS_ENUM(NSInteger, SectionTime) {
             return;
         }
     }
-    NSInteger a = [foldArray[tempIndex] integerValue];
+    BOOL a = [foldArray[tempIndex] boolValue];
     [foldArray replaceObjectAtIndex:tempIndex withObject:@(!a)];
-    [myTableView reloadData];
+    [_myTableView reloadData];
 }
 
-
+// 测试数据
 - (void) createHeader{
     headerModel = [NSMutableArray array];
     GPModel *model = [[GPModel alloc] init];
@@ -329,12 +355,6 @@ typedef NS_ENUM(NSInteger, SectionTime) {
     model2.subTitle3 = @"全部2";
     [headerModel addObject:model2];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 
 @end

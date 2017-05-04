@@ -8,12 +8,15 @@
 
 #import "EletricCell.h"
 
-@implementation EletricCell
+@implementation EletricCell{
+    NSMutableArray *monthArray;
+}
+
 
 -(void)initWithData:(id)cellModel{
     GPModel *model = cellModel;
-    _lbFengdian.text = [NSString stringWithFormat:@"峰电%@", model.electricfeng];
-    _lbGudian.text = [NSString stringWithFormat:@"谷电%@", model.electricgu];
+    _lbCrest.text = [NSString stringWithFormat:@"峰电%@", model.electricCrest];
+    _lbValley.text = [NSString stringWithFormat:@"谷电%@", model.electricValley];
     _month.text = [NSString stringWithFormat:@"%ld月", (long)model.month];
     if (model.month % 2) {
         self.rightImageView.backgroundColor = THEME_COLOR;
@@ -31,44 +34,46 @@
         make.width.mas_equalTo(lbMonthR.size.width + 0.5);
     }];
     
-    CGRect lbFengdianR = LABEL_RECT(_lbFengdian.text, 0, 0, 1, 8);
-    [_lbFengdian mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.rightImageView.mas_centerY).offset(-5);
+    CGRect lbCrestR = LABEL_RECT(_lbCrest.text, 0, 0, 1, 8);
+    [_lbCrest mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.rightImageView.mas_centerY).offset(-UIHEIGHT(11));
         make.centerX.equalTo(self.rightImageView);
-        make.height.mas_equalTo(lbFengdianR.size.height);
-        make.width.mas_equalTo(lbFengdianR.size.width + 0.5);
+        make.height.mas_equalTo(lbCrestR.size.height);
+        make.width.mas_equalTo(lbCrestR.size.width + 0.5);
     }];
     
-    CGRect lbGudianR = LABEL_RECT(_lbGudian.text, 0, 0, 1, 8);
-    [_lbGudian mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.rightImageView.mas_centerY).offset(5);
+    CGRect lbValleyR = LABEL_RECT(_lbValley.text, 0, 0, 1, 8);
+    [_lbValley mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.rightImageView.mas_centerY).offset(UIHEIGHT(11));
         make.centerX.equalTo(self.rightImageView);
-        make.height.mas_equalTo(lbGudianR.size.height);
-        make.width.mas_equalTo(lbGudianR.size.width + 0.5);
+        make.height.mas_equalTo(lbValleyR.size.height);
+        make.width.mas_equalTo(lbValleyR.size.width + 0.5);
     }];
     
     [self arcforNumbers:model];
 }
 
 - (void) arcforNumbers:(GPModel *) aModel{
+//    monthArray = [NSMutableArray array];
 //    NSMutableArray *array = [NSMutableArray array];
 //    for (int i=0; i<30; i++) {
 //        NSInteger a = arc4random() % 10;
 //        [array addObject:@(a)];
 //    }
+//    monthArray = [array copy];
 //    [self dealData:array];
     
-    [self dealData:aModel.monthElectrics];
+    [self dealElectricData:aModel.monthElectrics];
     
 }
 
 // 显示每周的电量图
-- (void) dealData:(NSArray *) array{
+- (void) dealElectricData:(NSArray *) array{
     CGFloat firstWeek = 0;
     CGFloat secondWeek = 0;
     CGFloat thirdWeek = 0;
     CGFloat fourthWeek = 0;
-    NSInteger total = 30;
+    NSInteger total = 50;
     
     for (int i=0; i<7; i++) {
         firstWeek += [array[i] integerValue];
@@ -90,7 +95,7 @@
     CGRect lbTitleR = [self attributedLabel:self.lbTitle str:@"度" size1:30 color1:[UIColor blackColor] size2:18 color2:[UIColor blackColor]];
     [self.lbTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.contentView.mas_centerY);
-        make.left.equalTo(self.contentView).offset(UIWIDTH(190));
+        make.right.equalTo(self.contentView.mas_left).offset(UIWIDTH(309));
         make.height.mas_equalTo(lbTitleR.size.height);
         make.width.mas_equalTo(lbTitleR.size.width + 0.5);
     }];
@@ -181,17 +186,6 @@
                 make.bottom.equalTo(self.contentView).offset(-UIHEIGHT(11));
                 make.left.equalTo(self.contentView).offset(UIWIDTH(412));
             }];
-            
-//            for (int i=0; i<4; i++) {
-//                UIView *view = [[UIView alloc] initWithFrame:CGRectMake(UIWIDTH(20) * i, 0, UIWIDTH(10), UIHEIGHT(9))];
-//                [_moreView addSubview:view];
-//                if ( i == 3) {
-//                    view.backgroundColor = THEME_COLOR;
-//                }
-//                else{
-//                    view.backgroundColor = [UIColor colorWithRed:128/255.0 green:128/255.0 blue:128/255.0 alpha:1];;
-//                }
-//            }
         }
         
         [self.rightImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -202,17 +196,17 @@
         self.rightImageView.image = [UIImage imageNamed:@""];
         self.rightImageView.layer.cornerRadius = UIWIDTH(50);
         
-        if (!_lbFengdian) {
-            _lbFengdian = [[UILabel alloc] init];
-            [self.rightImageView addSubview:_lbFengdian];
-            _lbFengdian.font = [UIFont systemFontOfSize:8];
-            _lbFengdian.textColor = [UIColor whiteColor];
+        if (!_lbCrest) {
+            _lbCrest = [[UILabel alloc] init];
+            [self.rightImageView addSubview:_lbCrest];
+            _lbCrest.font = [UIFont systemFontOfSize:8];
+            _lbCrest.textColor = [UIColor whiteColor];
         }
-        if (!_lbGudian) {
-            _lbGudian = [[UILabel alloc] init];
-            [self.rightImageView addSubview:_lbGudian];
-            _lbGudian.font = [UIFont systemFontOfSize:8];
-            _lbGudian.textColor = [UIColor whiteColor];
+        if (!_lbValley) {
+            _lbValley = [[UILabel alloc] init];
+            [self.rightImageView addSubview:_lbValley];
+            _lbValley.font = [UIFont systemFontOfSize:8];
+            _lbValley.textColor = [UIColor whiteColor];
         }
     }
     return self;

@@ -176,6 +176,13 @@
                "isWarning":false
                },
                {
+               "cellstyle" : 14,
+               "imageName" : "门磁_标签",
+               "selected" : false,
+               "subTitle" : "布防",
+               "title" : "智能门磁 [0024]"
+               },
+               {
                "badge" : 4,
                "cellstyle" : 10,
                "imageName" : "红外传感器_标签",
@@ -195,13 +202,6 @@
                "imageName" : "co传感器_标签",
                "subTitle" : "无",
                "title" : "CO传感 [0552]"
-               },
-               {
-               "cellstyle" : 14,
-               "imageName" : "门磁_标签",
-               "selected" : false,
-               "subTitle" : "布防",
-               "title" : "智能门磁 [0024]"
                }
                ],
               [
@@ -219,19 +219,19 @@
                },
                {
                "cellstyle" : 11,
-               "electricfeng" : "50%",
-               "electricgu" : "35%",
+               "electricCrest" : "50%",
+               "electricValley" : "35%",
                "month" : 6,
                "imageName" : "网关S3_168_168",
                "monthElectrics":[4,0,0,0,0,0,0, 0,0,0,0,2,0,0, 0,0,0,0,3,0,0, 0,0,0,0,0,0,0,5,0]
                },
                {
                "cellstyle" : 11,
-               "electricfeng" : "50%",
-               "electricgu" : "50%",
+               "electricCrest" : "50%",
+               "electricValley" : "50%",
                "month" : 5,
                "imageName" : "网关S3_168_168",
-               "monthElectrics":[0,0,0,0,0,0,0, 0,0,0,0,4,0,0, 0,0,0,0,2,0,0, 0,0,0,0,0,0,0,0,0]
+               "monthElectrics":[0,0,13,0,0,0,0, 0,0,0,0,3,0,0, 0,0,5,0,2,0,0, 0,0,0,0,0,0,0,0,0]
                },
                {
                "cellstyle" : 12,

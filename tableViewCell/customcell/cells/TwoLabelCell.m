@@ -8,6 +8,7 @@
 
 #import "TwoLabelCell.h"
 
+
 @implementation TwoLabelCell{
     UIImageView *imageView;
 }
@@ -37,8 +38,10 @@
     }];
     
     if (model.needUpdate) {
-        imageView = [[UIImageView alloc] init];
-        [self.contentView addSubview:imageView];
+        if (!imageView) {
+            imageView = [[UIImageView alloc] init];
+            [self.contentView addSubview:imageView];
+        }
         [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(self.contentView.mas_centerY);
             make.right.equalTo(self.contentView).offset(-UIWIDTH(32));
@@ -58,6 +61,7 @@
         }];
     }
 }
+
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {

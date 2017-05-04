@@ -27,11 +27,11 @@
     self.lbSubTitle.textColor = [UIColor whiteColor];
     _lbDeviceId.textColor = [UIColor whiteColor];
 
-    CGRect lbTitleR = LABEL_RECT(self.lbTitle.text, 0, 0, 1, 18);
-    CGRect lbSubTitleR = LABEL_RECT(self.lbSubTitle.text, 0, 0, 1, 15);
+    CGRect lbTitleR = LABEL_RECT(self.lbTitle.text, 0, 0, 1, 16);
+    CGRect lbSubTitleR = LABEL_RECT(self.lbSubTitle.text, 0, 0, 1, 14);
     
     [self.lbTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.rightImageView.mas_right).offset(20);
+        make.left.equalTo(self.contentView).offset(UIWIDTH(223));
         make.top.equalTo(self.contentView).offset(10);
         make.width.mas_equalTo(lbTitleR.size.width + 0.5);
         make.height.mas_equalTo(lbTitleR.size.height);
@@ -44,8 +44,8 @@
         
     }];
     
-    CGRect lbDeviceIdR = LABEL_RECT(_lbDeviceId.text, 0, 0, 1, 15);
-    CGRect lbSubTitle2R = LABEL_RECT(self.lbSubTitle2.text, 0, 0, 1, 15);
+    CGRect lbDeviceIdR = LABEL_RECT(_lbDeviceId.text, 0, 0, 1, 14);
+    CGRect lbSubTitle2R = LABEL_RECT(self.lbSubTitle2.text, 0, 0, 1, 14);
     [_lbDeviceId mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.lbTitle.mas_left);
         make.bottom.equalTo(self.contentView).offset(-10);
@@ -82,37 +82,38 @@
             line = [[UIView alloc] init];
             [self.contentView addSubview:line];
             [line mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.equalTo(self.contentView.mas_left).offset(80);
+                make.left.equalTo(self.contentView.mas_left).offset(UIWIDTH(181));
                 make.top.bottom.equalTo(self.contentView);
                 make.width.mas_equalTo(1);
             }];
-            line.backgroundColor = [UIColor grayColor];
+            line.backgroundColor = [UIColor colorWithRed:204/255.0 green:204/255.0 blue:204/255.0 alpha:1];
         }
         [self.contentView bringSubviewToFront:self.rightImageView];
         
         [self.rightImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView).offset(10);
-            make.height.width.mas_equalTo(40);
+            make.height.width.mas_equalTo(UIWIDTH(62));
             make.centerX.equalTo(line.mas_centerX);
         }];
-        self.rightImageView.layer.cornerRadius = 20;
+        self.rightImageView.layer.cornerRadius = UIWIDTH(31);
         self.rightImageView.layer.borderWidth = 1;
-        self.rightImageView.layer.borderColor = [UIColor cyanColor].CGColor;
+        self.rightImageView.layer.borderColor = [UIColor colorWithRed:0 green:241/255.0 blue:253/255.0 alpha:1].CGColor;
         self.rightImageView.backgroundColor = THEME_COLOR;
         self.rightImageView.image = [UIImage imageNamed:@""];
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, UIWIDTH(31), UIWIDTH(31))];
+        label.font = [UIFont systemFontOfSize:14];
         label.text = @"联";
-        label.center = CGPointMake(20, 20);
+        label.center = CGPointMake(UIWIDTH(31), UIWIDTH(31));
         label.textAlignment = NSTextAlignmentCenter;
         label.textColor = [UIColor whiteColor];
         [self.rightImageView addSubview:label];
         
         
-        self.lbTitle.font = [UIFont systemFontOfSize:18];
-        self.lbSubTitle.font = [UIFont systemFontOfSize:15];
-        self.lbSubTitle2.font = [UIFont systemFontOfSize:15];
-        _lbDeviceId.font = [UIFont systemFontOfSize:15];
+        self.lbTitle.font = [UIFont systemFontOfSize:16];
+        self.lbSubTitle.font = [UIFont systemFontOfSize:14];
+        self.lbSubTitle2.font = [UIFont systemFontOfSize:14];
+        _lbDeviceId.font = [UIFont systemFontOfSize:14];
     }
     return self;
 }

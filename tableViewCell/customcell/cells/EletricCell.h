@@ -12,8 +12,8 @@
 
 @property (nonatomic, strong) UIImageView *moreView;
 
-@property (nonatomic, strong) UILabel *lbFengdian;
-@property (nonatomic, strong) UILabel *lbGudian;
+@property (nonatomic, strong) UILabel *lbCrest;
+@property (nonatomic, strong) UILabel *lbValley;
 
 @property (nonatomic, strong) UILabel *month;
 

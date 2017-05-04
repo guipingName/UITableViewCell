@@ -77,15 +77,15 @@ typedef NS_ENUM(NSInteger, CellStyle) {
 @property (nonatomic,copy) NSString *imageName;
 
 /**峰电电量*/
-@property (nonatomic,copy) NSString *electricfeng;
+@property (nonatomic,copy) NSString *electricCrest;
 
 /**谷电电量*/
-@property (nonatomic,copy) NSString *electricgu;
+@property (nonatomic,copy) NSString *electricValley;
 
 /**电量月份*/
 @property (nonatomic, assign) NSInteger month;
 
-/**背景色类型*/
+/**背景色类型(用int代替)*/
 @property (nonatomic, assign) NSInteger backGroundColor;
 
 /**是否是展开的cell*/

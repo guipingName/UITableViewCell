@@ -35,7 +35,7 @@
             _bgImageView = [[UIImageView alloc] init];
             [self.contentView addSubview:_bgImageView];
             [_bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.equalTo(self.contentView).offset(5);
+                make.left.equalTo(self.contentView).offset(UIWIDTH(26));
                 make.height.width.mas_equalTo(40);
                 make.centerY.equalTo(self.contentView.mas_centerY);
             }];

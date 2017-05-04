@@ -68,11 +68,18 @@ typedef NS_ENUM(NSInteger, colorStyle) {
         }];
     }
     else{
+        [self.bgImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.height.width.mas_equalTo(UIWIDTH(112));
+            make.centerY.equalTo(self.contentView.mas_centerY);
+            make.centerX.equalTo(self.contentView.mas_left).offset(UIWIDTH(88));
+        }];
+        self.bgImageView.layer.cornerRadius = UIWIDTH(56);
+        
         self.bgImageView.backgroundColor = [self colorWithNumber:model.backGroundColor];
         self.bgImageView.image = [UIImage imageNamed:model.imageName];
         [self.lbTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self.contentView.mas_centerY);
-            make.left.equalTo(self.bgImageView.mas_right).offset(10);
+            make.top.equalTo(self.contentView.mas_centerY).offset(-UIHEIGHT(6));
+            make.left.equalTo(self.contentView).offset(UIWIDTH(170));
             make.height.mas_equalTo(lbtitleR.size.height);
             make.width.mas_equalTo(lbtitleR.size.width + 0.5);
         }];
