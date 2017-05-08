@@ -496,8 +496,7 @@
 				TargetAttributes = {
 					380515621EA9F5C60013635D = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 3Q2MJ36ZMT;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -740,12 +739,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3Q2MJ36ZMT;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/tableViewCell/PrefixHeader.pch";
 				INFOPLIST_FILE = tableViewCell/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pingui.GPAnimation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pingui.tableViewCell;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -755,12 +754,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3Q2MJ36ZMT;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/tableViewCell/PrefixHeader.pch";
 				INFOPLIST_FILE = tableViewCell/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pingui.GPAnimation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pingui.tableViewCell;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -137,54 +137,8 @@ typedef NS_ENUM(NSInteger, SectionDevice) {
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == TableViewSectionBase) {
-        if (indexPath.row == SectionBaseSeven) {
-            return UIHEIGHT(160);
-        }
-        return 50;
-    }
-    else if (indexPath.section == TableViewSectionNet ||
-        indexPath.section == TableViewSectionDoor) {
-        return UIHEIGHT(140);
-    }
-    else if (indexPath.section == TableViewSectionDevice) {
-        if (indexPath.row == SectionDeviceLight) {
-            return UIHEIGHT(284);
-        }
-        else if (indexPath.row == SectionDeviceHistoryCount ||
-                 indexPath.row == SectionDeviceHistory ||
-                 indexPath.row == SectionDeviceHistoryNone) {
-            return UIHEIGHT(130);
-        }
-        return UIHEIGHT(160);
-    }
-    else if (indexPath.section == TableViewSectionOther) {
-        if (indexPath.row == SectionOtherSingleLight ||
-            indexPath.row == SectionOtherLights) {
-            return 80;
-        }
-        else if (indexPath.row == SectionOtherElectricOdd ||
-                 indexPath.row == SectionOtherElectricEven) {
-            return UIHEIGHT(120);
-        }
-        else if (indexPath.row == SectionOtherDevice ||
-                 indexPath.row == SectionOtherDeviceType) {
-            return UIHEIGHT(320);
-        }
-        return 100;
-    }
-    else if (indexPath.section == TableViewSectionTime) {
-        if (indexPath.row == SectionTimeElectricOn) {
-            return UIHEIGHT(110);
-        }
-        else if (indexPath.row == SectionTimeElectricOnAndOff){
-            return UIHEIGHT(170);
-        }
-        return UIHEIGHT(140);
-    }
-    else{
-        return 80;
-    }
+    GPModel *model = dataArray[indexPath.section][indexPath.row];
+    return [BaseTableViewCell getCellHeightWithCellStyle:model];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -242,23 +196,23 @@ typedef NS_ENUM(NSInteger, SectionDevice) {
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     GPModel *model = dataArray[indexPath.section][indexPath.row];
     UITableViewCell *cell = [_myTableView cellForRowAtIndexPath:indexPath];
-    if (model.cellstyle == CellStyleTwoLabelCell) {
+    if (model.cellStyle == CellStyleTwoLabelCell) {
         if (model.needUpdate) {
             model.progress = 0.2;
             [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
         }
     }
-    else if (model.cellstyle == CellStyleButtonCell) {
+    else if (model.cellStyle == CellStyleButtonCell) {
         ButtonCell *cella = (ButtonCell *)cell;
         cella.rightButton.selected = !cella.rightButton.selected;
         model.selected = cella.rightButton.selected;
     }
-    else if (model.cellstyle == CellStyleChooseDeviceCell) {
+    else if (model.cellStyle == CellStyleChooseDeviceCell) {
         ChooseDeviceCell *cella = (ChooseDeviceCell *)cell;
         cella.rightButton.selected = !cella.rightButton.selected;
         model.selected = cella.rightButton.selected;
     }
-    else if (model.cellstyle == CellStyleTimerCell) {
+    else if (model.cellStyle == CellStyleTimerCell) {
         model.isClicked = YES;
         [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
     }
@@ -292,7 +246,7 @@ typedef NS_ENUM(NSInteger, SectionDevice) {
 /**创建组头*/
 -(HeaderCell *) createHederView:(NSInteger) number{
     GPModel *model = headerModel[number];
-    model.cellstyle = CellStyleHeaderCell;
+    model.cellStyle = CellStyleHeaderCell;
     HeaderCell *view = (HeaderCell *)[BaseTableViewCell createCellWithCellModel:model];
     view.clickedBlock = ^(BOOL isClicked, GPModel *tempModel){
         [self foldOrUnfold:tempModel orIndex:0];

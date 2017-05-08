@@ -10,6 +10,13 @@
 
 @implementation DeviceCell
 
++(CGFloat)getCellHeightWithCellStyle:(GPModel *)cellModel{
+    if (cellModel.subCell) {
+        return UIHEIGHT(140);
+    }
+    return UIHEIGHT(160);
+}
+
 -(void) imageJudge:(GPModel *) model{
     if (model.needUpdate) {
         self.subImageView1.hidden = NO;

@@ -10,6 +10,11 @@
 
 @implementation TimerCell
 
++(CGFloat)getCellHeightWithCellStyle:(GPModel *)cellModel{
+    return UIHEIGHT(140);
+}
+
+
 -(void)initWithData:(id)cellModel{
     GPModel *model = cellModel;
     self.lbTitle.text = model.title;

@@ -18,10 +18,14 @@
  */
 +(BaseTableViewCell *)createCellWithCellModel:(id)cellModel;
 
+
 /**
  * @brief cell赋值
  * @param  cellModel 数据模型
  */
 - (void) initWithData:(id) cellModel;
+
+
++(CGFloat)getCellHeightWithCellStyle:(GPModel *) cellModel;
 
 @end

@@ -10,6 +10,10 @@
 
 @implementation WithTimeCell
 
++(CGFloat)getCellHeightWithCellStyle:(GPModel *)cellModel{
+    return UIHEIGHT(130);
+}
+
 -(void)initWithData:(id)cellModel{
     GPModel *model = cellModel;
     self.lbTitle.text = model.title;

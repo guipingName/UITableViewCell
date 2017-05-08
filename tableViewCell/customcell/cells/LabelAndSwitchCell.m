@@ -13,6 +13,19 @@
     GPModel *tempModel;
 }
 
++(CGFloat)getCellHeightWithCellStyle:(GPModel *)cellModel{
+    if (cellModel.isLight) {
+        return UIHEIGHT(140);
+    }
+    else if (cellModel.timerMode == 1){
+        return UIHEIGHT(110);
+    }
+    else if (cellModel.timerMode == 2){
+        return UIHEIGHT(170);
+    }
+    return 50;
+}
+
 -(void)initWithData:(id)cellModel{
     GPModel *model = cellModel;
     tempModel = model;

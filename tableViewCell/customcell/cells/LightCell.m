@@ -17,6 +17,10 @@
     int index;
 }
 
++ (CGFloat)getCellHeightWithCellStyle:(GPModel *)cellModel{
+    return UIHEIGHT(170);
+}
+
 -(void)initWithData:(id)cellModel{
     GPModel *model = cellModel;
     tempModel = model;

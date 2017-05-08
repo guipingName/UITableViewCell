@@ -35,7 +35,7 @@ typedef NS_ENUM(NSInteger, CellStyle) {
 @interface GPModel : NSObject
 
 /**cell的类型*/
-@property (nonatomic, assign) CellStyle cellstyle;
+@property (nonatomic, assign) CellStyle cellStyle;
 
 /**一级标题*/
 @property (nonatomic,copy) NSString *title;

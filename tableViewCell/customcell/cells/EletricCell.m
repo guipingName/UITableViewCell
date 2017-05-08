@@ -12,6 +12,9 @@
     NSMutableArray *monthArray;
 }
 
++(CGFloat)getCellHeightWithCellStyle:(GPModel *)cellModel{
+    return UIHEIGHT(120);
+}
 
 -(void)initWithData:(id)cellModel{
     GPModel *model = cellModel;

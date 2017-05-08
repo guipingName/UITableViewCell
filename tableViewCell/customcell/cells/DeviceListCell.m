@@ -13,6 +13,10 @@
     UIButton *button;
 }
 
++(CGFloat)getCellHeightWithCellStyle:(GPModel *)cellModel{
+    return UIHEIGHT(320);
+}
+
 -(void)initWithData:(id)cellModel{
     GPModel *model = cellModel;
     UIColor *color = THEME_COLOR;

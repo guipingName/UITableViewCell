@@ -30,18 +30,24 @@
 #define LIGHT_CELL                      @"LightCell"
 
 
+
 @implementation BaseTableViewCell
 
 + (BaseTableViewCell *)createCellWithCellModel:(id)cellModel{
     GPModel *model = cellModel;
     BaseTableViewCell *cell = nil;
-    NSString *cellClasssName = [self getClassName:model.cellstyle];
+    NSString *cellClasssName = [self getClassName:model.cellStyle];
     Class classForCell = NSClassFromString(cellClasssName);
     cell = [[classForCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellClasssName];
     [cell initWithData:cellModel];
     return cell;
 }
 
++(CGFloat)getCellHeightWithCellStyle:(GPModel *) cellModel{
+    NSString *cellClasssName = [self getClassName:cellModel.cellStyle];
+    Class classForCell = NSClassFromString(cellClasssName);
+    return [classForCell getCellHeightWithCellStyle:cellModel];
+}
 
 + (NSString *) getClassName:(CellStyle) cellStyle{
     NSString *className = nil;

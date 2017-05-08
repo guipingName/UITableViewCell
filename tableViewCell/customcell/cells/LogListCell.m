@@ -12,6 +12,11 @@
     UIView *line;
 }
 
++(CGFloat)getCellHeightWithCellStyle:(GPModel *)cellModel{
+    return UIHEIGHT(158);
+}
+
+
 -(void)initWithData:(id)cellModel{
     GPModel *model = cellModel;
     self.lbTitle.text = model.title;

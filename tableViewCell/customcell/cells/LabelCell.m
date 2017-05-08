@@ -7,9 +7,12 @@
 //
 
 #import "LabelCell.h"
+#define CELL_DEFAULT_HEIGHT 50.f
 
 @implementation LabelCell
-
++(CGFloat)getCellHeightWithCellStyle:(GPModel *)cellModel{
+    return CELL_DEFAULT_HEIGHT;
+}
 -(void)initWithData:(id)cellModel{
     GPModel *model = cellModel;
     _lbTitle.text = model.title;
@@ -22,6 +25,7 @@
         make.width.mas_equalTo(lbtitleR.size.width + 0.5);
     }];
 }
+
 
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{

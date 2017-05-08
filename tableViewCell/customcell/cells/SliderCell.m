@@ -12,6 +12,9 @@
     GPModel *tempModel;
 }
 
++(CGFloat)getCellHeightWithCellStyle:(GPModel *)cellModel{
+    return 50;
+}
 
 -(void)initWithData:(id)cellModel{
     GPModel *model = cellModel;
