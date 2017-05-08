@@ -42,7 +42,6 @@
 		381281A71EADE53000C86A92 /* LabelAndSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 381281A61EADE53000C86A92 /* LabelAndSwitchCell.m */; };
 		381281AA1EADEA2900C86A92 /* ButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 381281A91EADEA2900C86A92 /* ButtonCell.m */; };
 		381281AC1EADEDB500C86A92 /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 381281AB1EADEDB500C86A92 /* ok.png */; };
-		381281B11EADF0B700C86A92 /* ChooseDeviceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 381281B01EADF0B700C86A92 /* ChooseDeviceCell.m */; };
 		381281BA1EAE036D00C86A92 /* LogListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 381281B91EAE036D00C86A92 /* LogListCell.m */; };
 		38224E581EAEFCF000EF9014 /* HeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38224E571EAEFCF000EF9014 /* HeaderCell.m */; };
 		38224E5A1EAF1DB200EF9014 /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 38224E591EAF1DB200EF9014 /* triangle.png */; };
@@ -167,8 +166,6 @@
 		381281A81EADEA2900C86A92 /* ButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonCell.h; sourceTree = "<group>"; };
 		381281A91EADEA2900C86A92 /* ButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonCell.m; sourceTree = "<group>"; };
 		381281AB1EADEDB500C86A92 /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
-		381281AF1EADF0B700C86A92 /* ChooseDeviceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseDeviceCell.h; sourceTree = "<group>"; };
-		381281B01EADF0B700C86A92 /* ChooseDeviceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseDeviceCell.m; sourceTree = "<group>"; };
 		381281B81EAE036D00C86A92 /* LogListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogListCell.h; sourceTree = "<group>"; };
 		381281B91EAE036D00C86A92 /* LogListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogListCell.m; sourceTree = "<group>"; };
 		38224E561EAEFCF000EF9014 /* HeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderCell.h; sourceTree = "<group>"; };
@@ -329,8 +326,6 @@
 				380515DA1EAA08040013635D /* DeviceCell.m */,
 				382C1ECE1EB044A5008E70CE /* TimerCell.h */,
 				382C1ECF1EB044A5008E70CE /* TimerCell.m */,
-				381281AF1EADF0B700C86A92 /* ChooseDeviceCell.h */,
-				381281B01EADF0B700C86A92 /* ChooseDeviceCell.m */,
 				380515E51EAA0EC40013635D /* WithTimeCell.h */,
 				380515E61EAA0EC40013635D /* WithTimeCell.m */,
 				380515E81EAA116F0013635D /* DeviceListCell.h */,
@@ -577,7 +572,6 @@
 				381281AA1EADEA2900C86A92 /* ButtonCell.m in Sources */,
 				380515861EA9F64B0013635D /* BaseTableViewCell.m in Sources */,
 				380515B01EA9F7090013635D /* MASViewConstraint.m in Sources */,
-				381281B11EADF0B700C86A92 /* ChooseDeviceCell.m in Sources */,
 				380515B51EA9F7090013635D /* NSObject+YYModel.m in Sources */,
 				380515811EA9F6040013635D /* GPModel.m in Sources */,
 				3805156E1EA9F5C80013635D /* ViewController.m in Sources */,

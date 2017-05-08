@@ -137,7 +137,24 @@
         }];
     }
     
-    [self imageJudge:model];
+    // 如果可以选择 就添加按钮
+    if (model.isOptional) {
+        [self.rightImageView removeFromSuperview];
+        [_rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(self.contentView);
+            make.right.equalTo(self.contentView).offset(-UIWIDTH(32));
+            make.height.width.mas_equalTo(UIWIDTH(37));
+        }];
+        if (model.selected) {
+            _rightButton.selected = YES;
+        }
+        else{
+            _rightButton.selected = NO;
+        }
+    }
+    else{
+        [self imageJudge:model];
+    }
 }
 
 // 展开的cell 布局
@@ -224,8 +241,14 @@
         if (!_lbSubTitle2) {
             _lbSubTitle2 = [[UILabel alloc] init];
             [self.contentView addSubview:_lbSubTitle2];
-            //_lbSubTitle2.font = [UIFont systemFontOfSize:18];
         }
+        
+        if (!_rightButton) {
+            _rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            [self.contentView addSubview:_rightButton];
+        }
+        [_rightButton setImage:[UIImage imageNamed:@"标签_未选"] forState:UIControlStateNormal];
+        [_rightButton setImage:[UIImage imageNamed:@"标签_选中"] forState:UIControlStateSelected];
     }
     return self;
 }

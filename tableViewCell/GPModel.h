@@ -18,15 +18,14 @@ typedef NS_ENUM(NSInteger, CellStyle) {
     CellStyleTwoImageViewsLabelCell = 5,
     CellStyleBaseCell = 6,
     CellStyleDeviceCell = 7,
+    CellStyleSliderCell = 8,
+    CellStyleLightCell = 9,
     CellStyleWithTimeCell = 10,
     CellStyleEletricCell = 11,
     CellStyleDeviceListCell = 12,
-    CellStyleChooseDeviceCell = 14,
+    CellStyleTimerCell = 13,
+    CellStyleHeaderCell = 14,
     CellStyleLogListCell = 15,
-    CellStyleHeaderCell = 16,
-    CellStyleTimerCell = 17,
-    CellStyleSliderCell = 18,
-    CellStyleLightCell = 19,
 };
 
 @interface GPModel : NSObject
@@ -72,6 +71,9 @@ typedef NS_ENUM(NSInteger, CellStyle) {
 
 /**报警*/
 @property (nonatomic, assign) BOOL warning;
+
+/**是否可选*/
+@property (nonatomic, assign) BOOL isOptional;
 
 /**设备总数*/
 @property (nonatomic, assign) NSInteger total;

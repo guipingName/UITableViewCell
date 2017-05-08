@@ -7,25 +7,25 @@
                },
                {
                "cellStyle" : 1,
-               "title" : "硬件版本",
+               "needUpdate" : false,
                "subTitle" : "0.0.2",
-               "needUpdate" : false
+               "title" : "硬件版本"
                },
                {
                "cellStyle" : 1,
-               "title" : "检查更新",
+               "needUpdate" : true,
+               "progress" : 1,
                "subTitle" : "最新8.8.8",
-               "progress" : 1.0,
-               "needUpdate" : true
+               "title" : "检查更新"
                },
                {
-               "cellStyle" : 18,
-               "sliderValue": 0.7
+               "cellStyle" : 8,
+               "sliderValue" : 0.7
                },
                {
                "cellStyle" : 3,
-               "title" : "声音",
-               "isOn":false
+               "isOn" : false,
+               "title" : "声音"
                },
                {
                "cellStyle" : 2,
@@ -34,154 +34,169 @@
                },
                {
                "cellStyle" : 4,
-               "title" : "修改密码",
-               "imageName" : "修改密码"
+               "imageName" : "修改密码",
+               "title" : "修改密码"
                },
                {
-               "cellStyle" : 5,
-               "title" : "自定义",
                "backGroundColor" : 1,
-               "imageName" : "联动_自定义"
+               "cellStyle" : 5,
+               "imageName" : "联动_自定义",
+               "title" : "自定义"
                }
                ],
               [
                {
                "cellStyle" : 6,
-               "title" : "照明类",
-               "total" : 5,
+               "imageName" : "标签_照明类",
                "online" : 3,
-               "imageName":"标签_照明类"
-               },
-               {
-               "cellStyle" : 7,
-               "title" : "网关 [1387]",
-               "subTitle" : "在线",
-               "imageName" : "网关S3_168_168"
-               },
-               {
-               "cellStyle" : 7,
-               "title" : "网关 [1388]",
-               "subTitle" : "在线",
-               "needUpdate":true,
-               "imageName" : "网关S3_168_168"
-               },
-               {
-               "cellStyle" : 7,
-               "title" : "网关 [1389]",
-               "subTitle" : "在线",
-               "isLowPower":true,
-               "imageName" : "网关S3_168_168"
-               },
-               {
-               "cellStyle" : 7,
-               "title" : "网关 [1389]",
-               "subTitle" : "在线",
-               "needUpdate":true,
-               "isLowPower":true,
-               "imageName" : "网关S3_168_168"
-               },
-               {
-               "cellStyle" : 7,
-               "title" : "网关 [1390]",
-               "subTitle" : "在线",
-               "needUpdate":true,
-               "isWarning":true,
-               "imageName" : "网关S3_168_168"
-               },
-               {
-               "cellStyle" : 7,
-               "title" : "网关 [1390]",
-               "subTitle" : "在线",
-               "isLowPower":true,
-               "isWarning":true,
-               "imageName" : "网关S3_168_168"
+               "title" : "照明类",
+               "total" : 5
                },
                {
                "cellStyle" : 7,
                "imageName" : "网关S3_168_168",
+               "isOptional" : false,
                "subTitle" : "在线",
-               "title" : "网关 [1390]",
-               "needUpdate":true,
-               "isLowPower":true,
-               "isWarning":true,
+               "title" : "网关 [1387]"
+               },
+               {
+               "cellStyle" : 7,
+               "imageName" : "网关S3_168_168",
+               "isOptional" : false,
+               "needUpdate" : true,
+               "subTitle" : "在线",
+               "title" : "网关 [1388]"
+               },
+               {
+               "cellStyle" : 7,
+               "imageName" : "网关S3_168_168",
+               "isLowPower" : true,
+               "isOptional" : false,
+               "subTitle" : "在线",
+               "title" : "网关 [1389]"
+               },
+               {
+               "cellStyle" : 7,
+               "imageName" : "网关S3_168_168",
+               "isLowPower" : true,
+               "isOptional" : false,
+               "needUpdate" : true,
+               "subTitle" : "在线",
+               "title" : "网关 [1389]"
+               },
+               {
+               "cellStyle" : 7,
+               "imageName" : "网关S3_168_168",
+               "isOptional" : false,
+               "isWarning" : true,
+               "needUpdate" : true,
+               "subTitle" : "在线",
+               "title" : "网关 [1390]"
+               },
+               {
+               "cellStyle" : 7,
+               "imageName" : "网关S3_168_168",
+               "isLowPower" : true,
+               "isOptional" : false,
+               "isWarning" : true,
+               "subTitle" : "在线",
+               "title" : "网关 [1390]"
+               },
+               {
+               "cellStyle" : 7,
+               "imageName" : "网关S3_168_168",
+               "isLowPower" : true,
+               "isOptional" : false,
+               "isWarning" : true,
+               "needUpdate" : true,
+               "subTitle" : "在线",
+               "title" : "网关 [1390]"
                },
                {
                "cellStyle" : 7,
                "imageName" : "智能水感_标签",
+               "isOptional" : false,
                "subTitle" : "报警",
                "title" : "智能水感 [2120]",
-               "warning":true
+               "warning" : true
                },
                {
                "cellStyle" : 7,
                "imageName" : "网关S3_168_168",
+               "isOptional" : false,
+               "isWarning" : true,
                "subTitle" : "报警",
                "title" : "网关 [1284]",
-               "warning":true,
                "warmingCount" : 3,
-               "isWarning" : true
+               "warning" : true
                },
                {
                "cellStyle" : 7,
                "imageName" : "红外传感器_标签",
+               "isLowPower" : true,
+               "isOptional" : false,
+               "isWarning" : false,
+               "needUpdate" : false,
                "subTitle" : "布防",
                "subTitle2" : "感应196次",
-               "title" : "红外感应器 [5782]",
-               "needUpdate":false,
-               "isLowPower":true,
-               "isWarning":false
+               "title" : "红外感应器 [5782]"
                },
                {
-               "DeviceType" : true,
                "cellStyle" : 7,
+               "DeviceType" : true,
                "imageName" : "网关S3_168_168",
+               "isLowPower" : false,
+               "isOptional" : false,
+               "isWarning" : false,
+               "needUpdate" : false,
                "online" : 4,
                "subTitle" : "在线",
-               "title" : "网关 [1386]",
                "subTitle2" : " ",
-               "total" : 4,
-               "needUpdate":false,
-               "isLowPower":false,
-               "isWarning":false
+               "title" : "网关 [1386]",
+               "total" : 4
                },
                {
                "cellStyle" : 7,
                "imageName" : "网关S3_168_168",
+               "isLowPower" : false,
+               "isOptional" : false,
+               "isWarning" : false,
+               "needUpdate" : false,
                "seperated" : true,
                "subTitle" : "通电",
                "subTitle2" : "负载0 W",
-               "title" : "悟能 [0058]",
-               "needUpdate":false,
-               "isLowPower":false,
-               "isWarning":false
+               "title" : "悟能 [0058]"
                },
                {
                "cellStyle" : 7,
-               "imageName" : "温湿度传感器_标签",
-               "seperated" : true,
                "humidness" : "43%",
-               "temperature" : 27.5,
-               "title" : "温湿度传感器 [2001]",
+               "imageName" : "温湿度传感器_标签",
+               "isLowPower" : false,
+               "isOptional" : false,
+               "isWarning" : false,
+               "needUpdate" : false,
+               "seperated" : true,
                "subTitle2" : " ",
-               "needUpdate":false,
-               "isLowPower":false,
-               "isWarning":false
+               "temperature" : 27.5,
+               "title" : "温湿度传感器 [2001]"
                },
                {
                "cellStyle" : 7,
-               "imageName" : "增强悟空_标签",
                "humidness" : "39%",
+               "imageName" : "增强悟空_标签",
+               "isLowPower" : false,
+               "isOptional" : false,
                "isThreeRow" : true,
+               "isWarning" : false,
+               "needUpdate" : false,
                "subTitle" : "待机",
                "temperature" : 27,
-               "title" : "悟空增强版 [8973]",
-               "needUpdate":false,
-               "isLowPower":false,
-               "isWarning":false
+               "title" : "悟空增强版 [8973]"
                },
                {
-               "cellStyle" : 14,
+               "cellStyle" : 7,
                "imageName" : "门磁_标签",
+               "isOptional" : true,
                "selected" : false,
                "subTitle" : "布防",
                "title" : "智能门磁 [0024]"
@@ -210,32 +225,104 @@
                ],
               [
                {
-               "cellStyle" : 19,
-               "title" : "纯色",
-               "isClicked":false,
-               "colors":[2]
+               "cellStyle" : 9,
+               "colors" : [
+                           2
+                           ],
+               "isClicked" : false,
+               "title" : "纯色"
                },
                {
-               "cellStyle" : 19,
-               "title" : "炫酷",
-               "isClicked":false,
-               "colors":[12, 8, 7, 3, 13, 6, 11]
+               "cellStyle" : 9,
+               "colors" : [
+                           12,
+                           8,
+                           7,
+                           3,
+                           13,
+                           6,
+                           11
+                           ],
+               "isClicked" : false,
+               "title" : "炫酷"
                },
                {
                "cellStyle" : 11,
                "electricCrest" : "50%",
                "electricValley" : "35%",
-               "month" : 6,
                "imageName" : "网关S3_168_168",
-               "monthElectrics":[4,0,0,0,0,0,0, 0,0,0,0,2,0,0, 0,0,0,0,3,0,0, 0,0,0,0,0,0,0,5,0]
+               "month" : 6,
+               "monthElectrics" : [
+                                   4,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   2,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   3,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   5,
+                                   0
+                                   ]
                },
                {
                "cellStyle" : 11,
                "electricCrest" : "50%",
                "electricValley" : "50%",
-               "month" : 5,
                "imageName" : "网关S3_168_168",
-               "monthElectrics":[0,0,13,0,0,0,0, 0,0,0,0,3,0,0, 0,0,5,0,2,0,0, 0,0,0,0,0,0,0,0,0]
+               "month" : 5,
+               "monthElectrics" : [
+                                   0,
+                                   0,
+                                   13,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   3,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   5,
+                                   0,
+                                   2,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0,
+                                   0
+                                   ]
                },
                {
                "cellStyle" : 12,
@@ -245,10 +332,10 @@
                "title" : "智能水感"
                },
                {
+               "DeviceType" : true,
                "cellStyle" : 12,
                "imageName" : "未绑定从设备",
-               "online" : 0,
-               "DeviceType":true
+               "online" : 0
                },
                {
                "cellStyle" : 15,
@@ -265,7 +352,8 @@
                "subTitle" : "18:32:18",
                "subTitle2" : "执行设备:",
                "title" : "手动触发"
-               }],
+               }
+               ],
               [
                {
                "cellStyle" : 5,
@@ -281,108 +369,108 @@
                "title" : "如果设置定时器到点了，就控制家电"
                },
                {
-               "cellStyle" : 17,
+               "cellStyle" : 13,
                "imageName" : "定时器_定时",
-               "title" : "定时器到点了",
-               "isClicked":false
+               "isClicked" : false,
+               "title" : "定时器到点了"
                },
                {
-               "cellStyle" : 17,
+               "cellStyle" : 13,
                "imageName" : "定时器_定时",
-               "title" : "如果设置定时器到点了，就控制家电",
-               "isClicked":true
+               "isClicked" : true,
+               "title" : "如果设置定时器到点了，就控制家电"
                },
                {
                "cellStyle" : 3,
-               "title" : "10:21 通电",
-               "timerSetted":true,
-               "isOn":false,
-               "timerMode":1,
-               "date" : "周三"
+               "date" : "周三",
+               "isOn" : false,
+               "timerMode" : 1,
+               "timerSetted" : true,
+               "title" : "10:21 通电"
                },
                {
                "cellStyle" : 3,
-               "title" : "09:55 通电",
+               "date" : "周一 周二 周三 周四 周六 周日",
+               "isOn" : true,
                "subTitle" : "10:21 断电",
-               "timerSetted":true,
-               "isOn":true,
-               "timerMode":2,
-               "date" : "周一 周二 周三 周四 周六 周日"
+               "timerMode" : 2,
+               "timerSetted" : true,
+               "title" : "09:55 通电"
                },
                {
+               "backGroundColor" : 1,
                "cellStyle" : 3,
-               "title" : "14:01  开灯",
-               "timerSetted":true,
-               "isLight":true,
-               "isOn":true,
-               "backGroundColor":1
+               "isLight" : true,
+               "isOn" : true,
+               "timerSetted" : true,
+               "title" : "14:01  开灯"
                },
                {
+               "backGroundColor" : 2,
                "cellStyle" : 3,
-               "title" : "13:49  开灯",
-               "timerSetted":true,
-               "isLight":true,
-               "isOn":false,
-               "backGroundColor":2,
-               "date" : "周一 周二 周三 周四"
+               "date" : "周一 周二 周三 周四",
+               "isLight" : true,
+               "isOn" : false,
+               "timerSetted" : true,
+               "title" : "13:49  开灯"
                }
-              ],
-              [
-               {
-               "cellStyle" : 7,
-               "imageName" : "网关S3_168_168",
-               "subCell" : true,
-               "subTitle" : "在线",
-               "title" : "网关 [1284]",
-               "needUpdate":false,
-               "isLowPower":false,
-               "isWarning":false
-               },
-               {
-               "cellStyle" : 7,
-               "imageName" : "网关S3_168_168",
-               "subCell" : true,
-               "subTitle" : "在线",
-               "title" : "网关 [1285]",
-               "needUpdate":false,
-               "isLowPower":false,
-               "isWarning":false
-               },
-               {
-               "cellStyle" : 7,
-               "imageName" : "网关S3_168_168",
-               "subCell" : true,
-               "subTitle" : "在线",
-               "title" : "网关 [1286]",
-               "needUpdate":false,
-               "isLowPower":false,
-               "isWarning":false
-               },
                ],
               [
                {
                "cellStyle" : 7,
                "imageName" : "网关S3_168_168",
-               "subTitle" : "布防",
+               "isLowPower" : false,
+               "isWarning" : false,
+               "needUpdate" : false,
                "subCell" : true,
-               "subTitle2" : "在线",
-               "title" : "智能门磁 [5147]",
-               "needUpdate":false,
-               "isLowPower":false,
-               "isWarning":false
+               "subTitle" : "在线",
+               "title" : "网关 [1284]"
                },
                {
                "cellStyle" : 7,
                "imageName" : "网关S3_168_168",
+               "isLowPower" : false,
+               "isWarning" : false,
+               "needUpdate" : false,
+               "subCell" : true,
+               "subTitle" : "在线",
+               "title" : "网关 [1285]"
+               },
+               {
+               "cellStyle" : 7,
+               "imageName" : "网关S3_168_168",
+               "isLowPower" : false,
+               "isWarning" : false,
+               "needUpdate" : false,
+               "subCell" : true,
+               "subTitle" : "在线",
+               "title" : "网关 [1286]"
+               }
+               ],
+              [
+               {
+               "cellStyle" : 7,
+               "imageName" : "网关S3_168_168",
+               "isLowPower" : false,
+               "isWarning" : false,
+               "needUpdate" : false,
                "subCell" : true,
                "subTitle" : "布防",
                "subTitle2" : "在线",
-               "title" : "智能门磁 [5148]",
-               "needUpdate":false,
-               "isLowPower":false,
-               "isWarning":false
+               "title" : "智能门磁 [5147]"
+               },
+               {
+               "cellStyle" : 7,
+               "imageName" : "网关S3_168_168",
+               "isLowPower" : false,
+               "isWarning" : false,
+               "needUpdate" : false,
+               "subCell" : true,
+               "subTitle" : "布防",
+               "subTitle2" : "在线",
+               "title" : "智能门磁 [5148]"
                }
-              ],
+               ]
               ],
     "message" : "数据获取成功",
     "success" : true

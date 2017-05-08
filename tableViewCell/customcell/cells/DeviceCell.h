@@ -21,6 +21,9 @@
 /**右侧图2*/
 @property (nonatomic, strong) UIImageView *subImageView3;
 
+/**选中按钮*/
+@property (nonatomic, strong) UIButton *rightButton;
+
 /**升级、低电量、警告提醒图标显示*/
 -(void) imageJudge:(GPModel *) model;
 @end

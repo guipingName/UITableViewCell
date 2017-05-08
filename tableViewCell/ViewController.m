@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "YYModel.h"
 #import "ButtonCell.h"
-#import "ChooseDeviceCell.h"
+#import "DeviceCell.h"
 #import "HeaderCell.h"
 
 #define BASE_TAG    500
@@ -207,10 +207,12 @@ typedef NS_ENUM(NSInteger, SectionDevice) {
         cella.rightButton.selected = !cella.rightButton.selected;
         model.selected = cella.rightButton.selected;
     }
-    else if (model.cellStyle == CellStyleChooseDeviceCell) {
-        ChooseDeviceCell *cella = (ChooseDeviceCell *)cell;
-        cella.rightButton.selected = !cella.rightButton.selected;
-        model.selected = cella.rightButton.selected;
+    else if (model.cellStyle == CellStyleDeviceCell) {
+        if (model.isOptional) {
+            DeviceCell *cella = (DeviceCell *)cell;
+            cella.rightButton.selected = !cella.rightButton.selected;
+            model.selected = cella.rightButton.selected;
+        }
     }
     else if (model.cellStyle == CellStyleTimerCell) {
         model.isClicked = YES;

@@ -19,7 +19,6 @@
 #define DEVICE_LIST_CELL                @"DeviceListCell"
 #define LABEL_SWITCH_CELL               @"LabelAndSwitchCell"
 #define BUTTON_CELL                     @"ButtonCell"
-#define DEVICE_CHOOSE_CELL              @"ChooseDeviceCell"
 #define LOG_LIST_CELL                   @"LogListCell"
 #define HEADER_CELL                     @"HeaderCell"
 #define TIMER_CELL                      @"TimerCell"
@@ -81,9 +80,6 @@
             break;
         case CellStyleButtonCell:
             className = BUTTON_CELL;
-            break;
-        case CellStyleChooseDeviceCell:
-            className = DEVICE_CHOOSE_CELL;
             break;
         case CellStyleLogListCell:
             className = LOG_LIST_CELL;
