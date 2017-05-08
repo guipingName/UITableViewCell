@@ -18,12 +18,9 @@ typedef NS_ENUM(NSInteger, CellStyle) {
     CellStyleTwoImageViewsLabelCell = 5,
     CellStyleBaseCell = 6,
     CellStyleDeviceCell = 7,
-    CellStyleDeviceSubCell = 8,
-    CellStyleWarningCell = 9,
     CellStyleWithTimeCell = 10,
     CellStyleEletricCell = 11,
     CellStyleDeviceListCell = 12,
-    CellStyleThreeLabelsCell = 13,
     CellStyleChooseDeviceCell = 14,
     CellStyleLogListCell = 15,
     CellStyleHeaderCell = 16,
@@ -67,8 +64,14 @@ typedef NS_ENUM(NSInteger, CellStyle) {
 /**是否低电量*/
 @property (nonatomic, assign) BOOL isLowPower;
 
+/**三行文字*/
+@property (nonatomic, assign) BOOL isThreeRow;
+
 /**是否报警提醒*/
 @property (nonatomic, assign) BOOL isWarning;
+
+/**报警*/
+@property (nonatomic, assign) BOOL warning;
 
 /**设备总数*/
 @property (nonatomic, assign) NSInteger total;

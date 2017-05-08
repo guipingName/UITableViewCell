@@ -6,8 +6,8 @@
 //  Copyright © 2017年 pingui. All rights reserved.
 //
 
-#import "DeviceSubCell.h"
+#import "DeviceCell.h"
 
-@interface WithTimeCell : DeviceSubCell
+@interface WithTimeCell : DeviceCell
 
 @end

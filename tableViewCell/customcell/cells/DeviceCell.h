@@ -10,6 +10,8 @@
 
 @interface DeviceCell : BaseCell
 
+@property (nonatomic, strong) UILabel *lbSubTitle2;
+
 /**右侧图1*/
 @property (nonatomic, strong) UIImageView *subImageView1;
 

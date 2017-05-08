@@ -30,9 +30,9 @@
         make.height.mas_equalTo(lbTitleR.size.height);
     }];
     if (model.isClicked) {
-        _lbSubTitle2.text = [self currentTime];
+        self.lbSubTitle2.text = [self currentTime];
         lbTitleR = LABEL_RECT(self.lbTitle.text, 150, 20, 1, 15);
-        CGRect lbSubTitle2R = LABEL_RECT(_lbSubTitle2.text, 0, 0, 1, 12);
+        CGRect lbSubTitle2R = LABEL_RECT(self.lbSubTitle2.text, 0, 0, 1, 12);
         
         [self.lbTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.bottom.equalTo(self.contentView.mas_centerY).offset(-UIHEIGHT(5));
@@ -40,7 +40,7 @@
             make.width.mas_equalTo(lbTitleR.size.width + 0.5);
             make.height.mas_equalTo(lbTitleR.size.height);
         }];
-        [_lbSubTitle2 mas_remakeConstraints:^(MASConstraintMaker *make) {
+        [self.lbSubTitle2 mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView.mas_centerY).offset(UIHEIGHT(5));
             make.left.equalTo(self.lbTitle.mas_left);
             make.width.mas_equalTo(lbSubTitle2R.size.width + 0.5);
@@ -86,12 +86,9 @@
         self.lbSubTitle.layer.borderColor = [UIColor colorWithRed:217/255.0 green:217/255.0 blue:217/255.0 alpha:217/255.0].CGColor;
         
         
-        if (!_lbSubTitle2) {
-            _lbSubTitle2 = [[UILabel alloc] init];
-            [self.contentView addSubview:_lbSubTitle2];
-            _lbSubTitle2.font = [UIFont systemFontOfSize:12];
-            _lbSubTitle2.textColor = [UIColor grayColor];
-        }
+        self.lbSubTitle2.font = [UIFont systemFontOfSize:12];
+        self.lbSubTitle2.textColor = [UIColor grayColor];
+        
         
         [self.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(UIWIDTH(30));

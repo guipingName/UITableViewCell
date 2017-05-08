@@ -6,9 +6,9 @@
 //  Copyright © 2017年 pingui. All rights reserved.
 //
 
-#import "DeviceSubCell.h"
+#import "DeviceCell.h"
 
-@interface DeviceListCell : DeviceSubCell
+@interface DeviceListCell : DeviceCell
 
 @property (nonatomic, copy) void (^buttonClickedBlock)(BOOL);
 

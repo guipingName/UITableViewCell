@@ -10,6 +10,5 @@
 
 @interface TimerCell : DeviceCell
 
-@property (nonatomic, strong) UILabel *lbSubTitle2;
 
 @end

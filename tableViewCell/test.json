@@ -106,21 +106,23 @@
                "isWarning":true,
                },
                {
-               "cellStyle" : 9,
+               "cellStyle" : 7,
                "imageName" : "智能水感_标签",
                "subTitle" : "报警",
-               "title" : "智能水感 [2120]"
+               "title" : "智能水感 [2120]",
+               "warning":true
                },
                {
-               "cellStyle" : 9,
+               "cellStyle" : 7,
                "imageName" : "网关S3_168_168",
                "subTitle" : "报警",
                "title" : "网关 [1284]",
+               "warning":true,
                "warmingCount" : 3,
                "isWarning" : true
                },
                {
-               "cellStyle" : 8,
+               "cellStyle" : 7,
                "imageName" : "红外传感器_标签",
                "subTitle" : "布防",
                "subTitle2" : "感应196次",
@@ -131,18 +133,19 @@
                },
                {
                "DeviceType" : true,
-               "cellStyle" : 8,
+               "cellStyle" : 7,
                "imageName" : "网关S3_168_168",
                "online" : 4,
                "subTitle" : "在线",
                "title" : "网关 [1386]",
+               "subTitle2" : " ",
                "total" : 4,
                "needUpdate":false,
                "isLowPower":false,
                "isWarning":false
                },
                {
-               "cellStyle" : 8,
+               "cellStyle" : 7,
                "imageName" : "网关S3_168_168",
                "seperated" : true,
                "subTitle" : "通电",
@@ -153,20 +156,22 @@
                "isWarning":false
                },
                {
-               "cellStyle" : 8,
+               "cellStyle" : 7,
                "imageName" : "温湿度传感器_标签",
                "seperated" : true,
                "humidness" : "43%",
                "temperature" : 27.5,
                "title" : "温湿度传感器 [2001]",
+               "subTitle2" : " ",
                "needUpdate":false,
                "isLowPower":false,
                "isWarning":false
                },
                {
-               "cellStyle" : 13,
+               "cellStyle" : 7,
                "imageName" : "增强悟空_标签",
                "humidness" : "39%",
+               "isThreeRow" : true,
                "subTitle" : "待机",
                "temperature" : 27,
                "title" : "悟空增强版 [8973]",
@@ -356,7 +361,7 @@
                ],
               [
                {
-               "cellStyle" : 8,
+               "cellStyle" : 7,
                "imageName" : "网关S3_168_168",
                "subTitle" : "布防",
                "subCell" : true,
@@ -367,7 +372,7 @@
                "isWarning":false
                },
                {
-               "cellStyle" : 8,
+               "cellStyle" : 7,
                "imageName" : "网关S3_168_168",
                "subCell" : true,
                "subTitle" : "布防",

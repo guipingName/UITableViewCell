@@ -6,9 +6,9 @@
 //  Copyright © 2017年 pingui. All rights reserved.
 //
 
-#import "DeviceSubCell.h"
+#import "DeviceCell.h"
 
-@interface LogListCell : DeviceSubCell
+@interface LogListCell : DeviceCell
 
 @property (nonatomic, strong) UILabel *lbDeviceId;
 

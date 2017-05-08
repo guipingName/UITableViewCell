@@ -14,10 +14,7 @@
 #define BASE_CELL                       @"BaseCell"
 #define TWO_IMAGEVIEWS_LABEL_CELL       @"TwoImageViewsLabelCell"
 #define ELECTRIC_CELL                   @"EletricCell"
-#define THREE_LABEL_CELL                @"ThreeLabelsCell"
 #define DEVICE_CELL                     @"DeviceCell"
-#define WARNING_CELL                    @"WarningCell"
-#define DEVICE_SUB_CELL                 @"DeviceSubCell"
 #define TIME_CELL                       @"WithTimeCell"
 #define DEVICE_LIST_CELL                @"DeviceListCell"
 #define LABEL_SWITCH_CELL               @"LabelAndSwitchCell"
@@ -70,17 +67,8 @@
         case CellStyleEletricCell:
             className = ELECTRIC_CELL;
             break;
-        case CellStyleThreeLabelsCell:
-            className = THREE_LABEL_CELL;
-            break;
         case CellStyleDeviceCell:
             className = DEVICE_CELL;
-            break;
-        case CellStyleWarningCell:
-            className = WARNING_CELL;
-            break;
-        case CellStyleDeviceSubCell:
-            className = DEVICE_SUB_CELL;
             break;
         case CellStyleWithTimeCell:
             className = TIME_CELL;

@@ -31,10 +31,7 @@
 		380515B61EA9F7090013635D /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 380515A81EA9F7090013635D /* YYClassInfo.m */; };
 		380515D21EAA01400013635D /* EletricCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 380515D11EAA01400013635D /* EletricCell.m */; };
 		380515D51EAA018E0013635D /* UIImage+RTTint.m in Sources */ = {isa = PBXBuildFile; fileRef = 380515D41EAA018E0013635D /* UIImage+RTTint.m */; };
-		380515D81EAA02850013635D /* ThreeLabelsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 380515D71EAA02850013635D /* ThreeLabelsCell.m */; };
 		380515DB1EAA08040013635D /* DeviceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 380515DA1EAA08040013635D /* DeviceCell.m */; };
-		380515DE1EAA09460013635D /* WarningCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 380515DD1EAA09460013635D /* WarningCell.m */; };
-		380515E11EAA0A9A0013635D /* DeviceSubCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 380515E01EAA0A9A0013635D /* DeviceSubCell.m */; };
 		380515E71EAA0EC40013635D /* WithTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 380515E61EAA0EC40013635D /* WithTimeCell.m */; };
 		380515EA1EAA116F0013635D /* DeviceListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 380515E91EAA116F0013635D /* DeviceListCell.m */; };
 		381281951EAD8BF400C86A92 /* LabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 381281941EAD8BF400C86A92 /* LabelCell.m */; };
@@ -149,14 +146,8 @@
 		380515D11EAA01400013635D /* EletricCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EletricCell.m; sourceTree = "<group>"; };
 		380515D31EAA018E0013635D /* UIImage+RTTint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RTTint.h"; sourceTree = "<group>"; };
 		380515D41EAA018E0013635D /* UIImage+RTTint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RTTint.m"; sourceTree = "<group>"; };
-		380515D61EAA02850013635D /* ThreeLabelsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeLabelsCell.h; sourceTree = "<group>"; };
-		380515D71EAA02850013635D /* ThreeLabelsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeLabelsCell.m; sourceTree = "<group>"; };
 		380515D91EAA08040013635D /* DeviceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceCell.h; sourceTree = "<group>"; };
 		380515DA1EAA08040013635D /* DeviceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceCell.m; sourceTree = "<group>"; };
-		380515DC1EAA09460013635D /* WarningCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WarningCell.h; sourceTree = "<group>"; };
-		380515DD1EAA09460013635D /* WarningCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WarningCell.m; sourceTree = "<group>"; };
-		380515DF1EAA0A9A0013635D /* DeviceSubCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceSubCell.h; sourceTree = "<group>"; };
-		380515E01EAA0A9A0013635D /* DeviceSubCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceSubCell.m; sourceTree = "<group>"; };
 		380515E51EAA0EC40013635D /* WithTimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithTimeCell.h; sourceTree = "<group>"; };
 		380515E61EAA0EC40013635D /* WithTimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithTimeCell.m; sourceTree = "<group>"; };
 		380515E81EAA116F0013635D /* DeviceListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceListCell.h; sourceTree = "<group>"; };
@@ -338,14 +329,8 @@
 				380515DA1EAA08040013635D /* DeviceCell.m */,
 				382C1ECE1EB044A5008E70CE /* TimerCell.h */,
 				382C1ECF1EB044A5008E70CE /* TimerCell.m */,
-				380515DF1EAA0A9A0013635D /* DeviceSubCell.h */,
-				380515E01EAA0A9A0013635D /* DeviceSubCell.m */,
 				381281AF1EADF0B700C86A92 /* ChooseDeviceCell.h */,
 				381281B01EADF0B700C86A92 /* ChooseDeviceCell.m */,
-				380515DC1EAA09460013635D /* WarningCell.h */,
-				380515DD1EAA09460013635D /* WarningCell.m */,
-				380515D61EAA02850013635D /* ThreeLabelsCell.h */,
-				380515D71EAA02850013635D /* ThreeLabelsCell.m */,
 				380515E51EAA0EC40013635D /* WithTimeCell.h */,
 				380515E61EAA0EC40013635D /* WithTimeCell.m */,
 				380515E81EAA116F0013635D /* DeviceListCell.h */,
@@ -595,7 +580,6 @@
 				381281B11EADF0B700C86A92 /* ChooseDeviceCell.m in Sources */,
 				380515B51EA9F7090013635D /* NSObject+YYModel.m in Sources */,
 				380515811EA9F6040013635D /* GPModel.m in Sources */,
-				380515E11EAA0A9A0013635D /* DeviceSubCell.m in Sources */,
 				3805156E1EA9F5C80013635D /* ViewController.m in Sources */,
 				381281A71EADE53000C86A92 /* LabelAndSwitchCell.m in Sources */,
 				3805156B1EA9F5C70013635D /* AppDelegate.m in Sources */,
@@ -604,7 +588,6 @@
 				380515AB1EA9F7090013635D /* MASCompositeConstraint.m in Sources */,
 				381281A41EAD93FF00C86A92 /* TwoLabelCell.m in Sources */,
 				380515AF1EA9F7090013635D /* MASViewAttribute.m in Sources */,
-				380515D81EAA02850013635D /* ThreeLabelsCell.m in Sources */,
 				380515AD1EA9F7090013635D /* MASConstraintMaker.m in Sources */,
 				380515DB1EAA08040013635D /* DeviceCell.m in Sources */,
 				380515B11EA9F7090013635D /* NSArray+MASAdditions.m in Sources */,
@@ -614,7 +597,6 @@
 				380515EA1EAA116F0013635D /* DeviceListCell.m in Sources */,
 				380515B41EA9F7090013635D /* ViewController+MASAdditions.m in Sources */,
 				380515AC1EA9F7090013635D /* MASConstraint.m in Sources */,
-				380515DE1EAA09460013635D /* WarningCell.m in Sources */,
 				380515AE1EA9F7090013635D /* MASLayoutConstraint.m in Sources */,
 				380515681EA9F5C60013635D /* main.m in Sources */,
 				381281981EAD8C6200C86A92 /* ImageViewAndLabel.m in Sources */,
