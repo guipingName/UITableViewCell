@@ -44,7 +44,6 @@
     }
     else{
         if (model.subTitle2) { // 两行文字 且第二行文字需要拼接
-            // 有中间的分割线
             if (model.seperated) { // 中间有竖线
                 if (model.temperature) {
                     self.lbSubTitle.text = [NSString stringWithFormat:@"%.1f℃  |  %@", model.temperature, model.humidness];
@@ -67,10 +66,9 @@
             }
             self.lbSubTitle.textColor = [UIColor blackColor];
         }
-        else{
-            // 如果是报警类
-            if (model.warning) {
-                if (model.warmingCount) {
+        else{ // 两行文字 没有拼接
+            if (model.warning) { // 如果是报警类
+                if (model.warmingCount) { // 有数字提示
                     UIColor *color = THEME_COLOR;
                     lbTitleR = [self attributedLbtitleFirstColor:color];
                     self.lbSubTitle.text = [NSString stringWithFormat:@"%ld台报警", (long)model.warmingCount];
