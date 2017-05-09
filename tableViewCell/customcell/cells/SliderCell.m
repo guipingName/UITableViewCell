@@ -30,12 +30,12 @@
         [self.bgImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(UIWIDTH(22));
             make.height.width.mas_equalTo(40);
-            make.centerY.equalTo(self.contentView.mas_centerY);
+            make.centerY.equalTo(self.contentView);
         }];
         
         [self.rightImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.height.width.mas_equalTo(40);
-            make.centerY.equalTo(self.contentView.mas_centerY);
+            make.centerY.equalTo(self.contentView);
             make.right.equalTo(self.contentView).offset(-UIWIDTH(22));
         }];
         
@@ -43,7 +43,7 @@
             _slider = [[UISlider alloc] init];
             [self.contentView addSubview:_slider];
             [_slider mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.centerY.equalTo(self.contentView.mas_centerY);
+                make.centerY.equalTo(self.contentView);
                 make.left.equalTo(self.bgImageView.mas_right).offset(5);
                 make.right.equalTo(self.rightImageView.mas_left).offset(-5);
                 make.height.mas_equalTo(10);

@@ -22,7 +22,7 @@
 #define LABEL_RECT(labelText,limitW,limitH,option,font) [labelText boundingRectWithSize:CGSizeMake(limitW, limitH) options:option attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]} context:nil]
 
 #define THEME_COLOR [UIColor colorWithRed:0/255.0 green:174/255.0 blue:225/255.0 alpha:1];
-
+#define CELL_LINE_COLOR [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:1];
 #define tableViewCell       @"tableViewCell"
 
 // Include any system framework and library headers here that should be included in all compilation units.

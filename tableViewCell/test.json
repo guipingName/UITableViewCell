@@ -419,9 +419,6 @@
                {
                "cellStyle" : 7,
                "imageName" : "网关S3_168_168",
-               "isLowPower" : false,
-               "isWarning" : false,
-               "needUpdate" : false,
                "subCell" : true,
                "subTitle" : "在线",
                "title" : "网关 [1284]"
@@ -429,9 +426,6 @@
                {
                "cellStyle" : 7,
                "imageName" : "网关S3_168_168",
-               "isLowPower" : false,
-               "isWarning" : false,
-               "needUpdate" : false,
                "subCell" : true,
                "subTitle" : "在线",
                "title" : "网关 [1285]"
@@ -439,9 +433,6 @@
                {
                "cellStyle" : 7,
                "imageName" : "网关S3_168_168",
-               "isLowPower" : false,
-               "isWarning" : false,
-               "needUpdate" : false,
                "subCell" : true,
                "subTitle" : "在线",
                "title" : "网关 [1286]"
@@ -451,9 +442,6 @@
                {
                "cellStyle" : 7,
                "imageName" : "网关S3_168_168",
-               "isLowPower" : false,
-               "isWarning" : false,
-               "needUpdate" : false,
                "subCell" : true,
                "subTitle" : "布防",
                "subTitle2" : "在线",
@@ -462,9 +450,6 @@
                {
                "cellStyle" : 7,
                "imageName" : "网关S3_168_168",
-               "isLowPower" : false,
-               "isWarning" : false,
-               "needUpdate" : false,
                "subCell" : true,
                "subTitle" : "布防",
                "subTitle2" : "在线",

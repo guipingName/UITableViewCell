@@ -22,7 +22,7 @@
     
     CGRect lbSubTitleR = LABEL_RECT(_lbSubTitle.text, UIWIDTH(220), 0, 1, 14);
     [self.lbTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.contentView.mas_centerY);
+        make.centerY.equalTo(self.contentView);
         make.left.equalTo(self.contentView).offset(UIWIDTH(32));
         make.height.mas_equalTo(lbTitleR.size.height);
         make.width.mas_equalTo(lbTitleR.size.width + 0.5);
@@ -31,7 +31,7 @@
     _lbSubTitle.textColor = THEME_COLOR;
     _lbSubTitle.textAlignment = NSTextAlignmentRight;
     [_lbSubTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.contentView.mas_centerY);
+        make.centerY.equalTo(self.contentView);
         make.right.equalTo(self.contentView).offset(-UIWIDTH(32));
         make.height.mas_equalTo(lbSubTitleR.size.height);
         make.width.mas_equalTo(lbSubTitleR.size.width + 0.5);
@@ -43,7 +43,7 @@
             [self.contentView addSubview:imageView];
         }
         [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self.contentView.mas_centerY);
+            make.centerY.equalTo(self.contentView);
             make.right.equalTo(self.contentView).offset(-UIWIDTH(32));
             make.height.width.mas_equalTo(15);
         }];
@@ -54,7 +54,7 @@
             imageView.image = [[UIImage imageNamed:@"升级60%72"] rt_tintedImageWithColor:[UIColor greenColor]];
         }
         [_lbSubTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self.contentView.mas_centerY);
+            make.centerY.equalTo(self.contentView);
             make.right.equalTo(imageView.mas_left).offset(-10);
             make.height.mas_equalTo(lbSubTitleR.size.height);
             make.width.mas_equalTo(lbSubTitleR.size.width + 0.5);

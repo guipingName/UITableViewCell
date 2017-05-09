@@ -31,8 +31,8 @@
     CGRect lbMonthR = [self attributedLabel:_month str:@"月" size1:16 color1:color size2:10 color2:color];
     self.bgImageView.image = [[UIImage imageNamed:@"日历"] rt_tintedImageWithColor:color];
     [_month mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.bgImageView.mas_centerY).offset(3);
-        make.centerX.equalTo(self.bgImageView.mas_centerX);
+        make.centerY.equalTo(self.bgImageView).offset(3);
+        make.centerX.equalTo(self.bgImageView);
         make.height.mas_equalTo(lbMonthR.size.height);
         make.width.mas_equalTo(lbMonthR.size.width + 0.5);
     }];
@@ -97,7 +97,7 @@
     self.lbTitle.text = [NSString stringWithFormat:@"%.0f度", firstWeek + secondWeek + thirdWeek + fourthWeek];
     CGRect lbTitleR = [self attributedLabel:self.lbTitle str:@"度" size1:30 color1:[UIColor blackColor] size2:18 color2:[UIColor blackColor]];
     [self.lbTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.contentView.mas_centerY);
+        make.centerY.equalTo(self.contentView);
         make.right.equalTo(self.contentView.mas_left).offset(UIWIDTH(309));
         make.height.mas_equalTo(lbTitleR.size.height);
         make.width.mas_equalTo(lbTitleR.size.width + 0.5);
@@ -113,8 +113,8 @@
     UIView *view0 = [[UIView alloc] init];
     [_moreView addSubview:view0];
     [view0 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_moreView.mas_left);
-        make.bottom.equalTo(_moreView.mas_bottom);
+        make.left.equalTo(_moreView);
+        make.bottom.equalTo(_moreView);
         make.width.mas_equalTo(UIWIDTH(10));
         make.height.mas_equalTo(UIHEIGHT(9) + UIHEIGHT(80) * firstWeek);
     }];
@@ -122,8 +122,8 @@
     UIView *view1 = [[UIView alloc] init];
     [_moreView addSubview:view1];
     [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_moreView.mas_left).offset(UIWIDTH(20));;
-        make.bottom.equalTo(_moreView.mas_bottom);
+        make.left.equalTo(_moreView).offset(UIWIDTH(20));;
+        make.bottom.equalTo(_moreView);
         make.width.mas_equalTo(UIWIDTH(10));
         make.height.mas_equalTo(UIHEIGHT(9) + UIHEIGHT(80) * secondWeek);
     }];
@@ -131,8 +131,8 @@
     UIView *view2 = [[UIView alloc] init];
     [_moreView addSubview:view2];
     [view2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_moreView.mas_left).offset(UIWIDTH(40));
-        make.bottom.equalTo(_moreView.mas_bottom);
+        make.left.equalTo(_moreView).offset(UIWIDTH(40));
+        make.bottom.equalTo(_moreView);
         make.width.mas_equalTo(UIWIDTH(10));
         make.height.mas_equalTo(UIHEIGHT(9) + UIHEIGHT(80) * thirdWeek);
     }];
@@ -140,8 +140,8 @@
     UIView *view3 = [[UIView alloc] init];
     [_moreView addSubview:view3];
     [view3 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_moreView.mas_left).offset(UIWIDTH(60));;
-        make.bottom.equalTo(_moreView.mas_bottom);
+        make.left.equalTo(_moreView).offset(UIWIDTH(60));;
+        make.bottom.equalTo(_moreView);
         make.width.mas_equalTo(UIWIDTH(10));
         make.height.mas_equalTo(UIHEIGHT(9) + UIHEIGHT(80) * fourthWeek);
     }];
@@ -157,7 +157,7 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(UIWIDTH(30));
-            make.right.equalTo(self.contentView.mas_right);
+            make.right.equalTo(self.contentView);
             make.height.mas_equalTo(1);
             make.bottom.equalTo(self.contentView.mas_bottom);
         }];

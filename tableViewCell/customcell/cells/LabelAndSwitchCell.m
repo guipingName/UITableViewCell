@@ -41,7 +41,7 @@
         self.lbTitle.font = [UIFont systemFontOfSize:18];
         CGRect lbtitleR = LABEL_RECT(self.lbTitle.text, 0, 0, 1, 18);
         [self.lbTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self.contentView.mas_centerY);
+            make.centerY.equalTo(self.contentView);
             make.left.equalTo(self.contentView).offset(UIWIDTH(21));
             make.height.mas_equalTo(lbtitleR.size.height);
             make.width.mas_equalTo(lbtitleR.size.width + 0.5);
@@ -59,7 +59,7 @@
             [self.contentView addSubview:_rightSwitch];
         }
         [_rightSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self.contentView.mas_centerY);
+            make.centerY.equalTo(self.contentView);
             make.right.equalTo(self.contentView).offset(-UIWIDTH(18));
             make.height.mas_equalTo(30);
             make.width.mas_equalTo(50);
@@ -80,8 +80,8 @@
             lightImageView = [[UIImageView alloc] init];
             [self.contentView addSubview:lightImageView];
             [lightImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.equalTo(self.contentView.mas_left).offset(0);
-                make.centerY.equalTo(self.contentView.mas_centerY);
+                make.left.equalTo(self.contentView).offset(0);
+                make.centerY.equalTo(self.contentView);
                 make.height.width.mas_equalTo(UIHEIGHT(95));
             }];
         }

@@ -42,16 +42,16 @@ typedef NS_ENUM(NSInteger, colorStyle) {
     if (model.subCell) {
         [self.bgImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.height.width.mas_equalTo(UIWIDTH(54));
-            make.centerY.equalTo(self.contentView.mas_centerY);
+            make.centerY.equalTo(self.contentView);
             make.centerX.equalTo(self.contentView.mas_left).offset(UIWIDTH(90));
         }];
         self.bgImageView.layer.cornerRadius = UIWIDTH(27);
         
         [self.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(UIWIDTH(30));
-            make.right.equalTo(self.contentView.mas_right);
+            make.right.equalTo(self.contentView);
             make.height.mas_equalTo(1);
-            make.bottom.equalTo(self.contentView.mas_bottom);
+            make.bottom.equalTo(self.contentView);
         }];
         self.lineView.backgroundColor = [UIColor colorWithRed:204/255.0 green:203/255.0 blue:207/255.0 alpha:1];
         
@@ -68,7 +68,7 @@ typedef NS_ENUM(NSInteger, colorStyle) {
         }
         
         [self.lbTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self.contentView.mas_centerY);
+            make.centerY.equalTo(self.contentView);
             make.left.equalTo(self.contentView).offset(UIWIDTH(169));
             make.height.mas_equalTo(lbtitleR.size.height);
             make.width.mas_equalTo(lbtitleR.size.width + 0.5);
@@ -77,7 +77,7 @@ typedef NS_ENUM(NSInteger, colorStyle) {
     else{
         [self.bgImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.height.width.mas_equalTo(UIWIDTH(112));
-            make.centerY.equalTo(self.contentView.mas_centerY);
+            make.centerY.equalTo(self.contentView);
             make.centerX.equalTo(self.contentView.mas_left).offset(UIWIDTH(88));
         }];
         self.bgImageView.layer.cornerRadius = UIWIDTH(56);
@@ -150,7 +150,7 @@ typedef NS_ENUM(NSInteger, colorStyle) {
             [self.contentView addSubview:_rightImageView];
             [_rightImageView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.height.width.mas_equalTo(26);
-                make.centerY.equalTo(self.contentView.mas_centerY);
+                make.centerY.equalTo(self.contentView);
                 make.right.equalTo(self.contentView).offset(-UIWIDTH(22));
             }];
             

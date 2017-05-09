@@ -32,7 +32,7 @@
         
         
         [self.lbSubTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.equalTo(self.contentView.mas_centerX);
+            make.centerX.equalTo(self.contentView);
             make.bottom.equalTo(self.contentView).offset(-UIHEIGHT(28));
             make.width.mas_equalTo(lbSubTitleR.size.width + 0.5);
             make.height.mas_equalTo(lbSubTitleR.size.height);
@@ -46,7 +46,7 @@
             button = [UIButton buttonWithType:UIButtonTypeCustom];
             [self.contentView addSubview:button];
             [button mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.centerX.equalTo(self.contentView.mas_centerX);
+                make.centerX.equalTo(self.contentView);
                 make.bottom.equalTo(self.contentView).offset(-UIHEIGHT(28));
                 make.height.width.mas_equalTo(10);
             }];
@@ -72,14 +72,14 @@
     CGRect lbSubTitle2R = LABEL_RECT(self.lbSubTitle2.text, 0, 0, 1, 15);
     [self.lbSubTitle2 mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.contentView).offset(-UIWIDTH(72));
-        make.bottom.equalTo(self.lbTitle.mas_bottom);
+        make.bottom.equalTo(self.lbTitle);
         make.height.mas_equalTo(lbSubTitle2R.size.height);
         make.width.mas_equalTo(lbSubTitle2R.size.width + 0.5);
     }];
     self.lbSubTitle2.textColor = [UIColor whiteColor];
     
     [self.rightImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.contentView.mas_centerX);
+        make.centerX.equalTo(self.contentView);
         make.top.equalTo(self.contentView).offset(UIHEIGHT(40));
         make.bottom.equalTo(self.lbTitle.mas_top).offset(-UIHEIGHT(27));
         make.width.equalTo(self.rightImageView.mas_height);
@@ -99,7 +99,7 @@
         [self.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(self.contentView);
             make.height.mas_equalTo(1);
-            make.bottom.equalTo(self.contentView.mas_bottom);
+            make.bottom.equalTo(self.contentView);
         }];
         self.lineView.backgroundColor = [UIColor colorWithRed:114/255.0 green:207/255.0 blue:237/255.0 alpha:1];
     }

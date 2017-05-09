@@ -24,7 +24,7 @@
     
     CGRect lbTitleR = LABEL_RECT(self.lbTitle.text, UIWIDTH(300), 40, 1, 15);
     [self.lbTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.contentView.mas_centerY);
+        make.centerY.equalTo(self.contentView);
         make.left.equalTo(self.contentView).offset(UIWIDTH(170));
         make.width.mas_equalTo(lbTitleR.size.width + 0.5);
         make.height.mas_equalTo(lbTitleR.size.height);
@@ -42,7 +42,7 @@
         }];
         [self.lbSubTitle2 mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView.mas_centerY).offset(UIHEIGHT(5));
-            make.left.equalTo(self.lbTitle.mas_left);
+            make.left.equalTo(self.lbTitle);
             make.width.mas_equalTo(lbSubTitle2R.size.width + 0.5);
             make.height.mas_equalTo(lbSubTitle2R.size.height);
         }];
@@ -64,7 +64,7 @@
         
         [self.bgImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.height.width.mas_equalTo(27);
-            make.centerY.equalTo(self.contentView.mas_centerY);
+            make.centerY.equalTo(self.contentView);
             make.centerX.equalTo(self.contentView.mas_left).offset(UIWIDTH(90));
         }];
         self.bgImageView.layer.cornerRadius = 13.5;
@@ -75,7 +75,7 @@
         self.lbSubTitle.font = [UIFont systemFontOfSize:14];
         CGRect lbSubTitleR = LABEL_RECT(self.lbSubTitle.text, 0, 0, 1, 14);
         [self.lbSubTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self.contentView.mas_centerY);
+            make.centerY.equalTo(self.contentView);
             make.right.equalTo(self.contentView).offset(-UIWIDTH(19));
             make.width.mas_equalTo(lbSubTitleR.size.width + 20);
             make.height.mas_equalTo(lbSubTitleR.size.height + 10);
@@ -92,9 +92,9 @@
         
         [self.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(UIWIDTH(30));
-            make.right.equalTo(self.contentView.mas_right);
+            make.right.equalTo(self.contentView);
             make.height.mas_equalTo(1);
-            make.bottom.equalTo(self.contentView.mas_bottom);
+            make.bottom.equalTo(self.contentView);
         }];
         self.lineView.backgroundColor = [UIColor colorWithRed:219/255.0 green:219/255.0 blue:221/255.0 alpha:217/255.0];
         

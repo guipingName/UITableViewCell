@@ -57,7 +57,7 @@
     else{
         [self.rightImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.height.width.mas_equalTo(UIWIDTH(43));
-            make.centerY.equalTo(self.contentView.mas_centerY);
+            make.centerY.equalTo(self.contentView);
             make.right.equalTo(self.contentView).offset(-UIWIDTH(40));
         }];
         self.rightImageView.layer.cornerRadius = UIWIDTH(43) / 2.0;
@@ -84,7 +84,7 @@
         [self.bgImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(UIWIDTH(34));
             make.height.width.mas_equalTo(UIWIDTH(88));
-            make.centerY.equalTo(self.contentView.mas_centerY);
+            make.centerY.equalTo(self.contentView);
         }];
         self.bgImageView.layer.cornerRadius = UIWIDTH(44);
         

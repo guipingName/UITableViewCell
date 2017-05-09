@@ -19,7 +19,7 @@
     _lbTitle.font = [UIFont systemFontOfSize:18];
     CGRect lbtitleR = LABEL_RECT(_lbTitle.text, 0, 0, 1, 18);
     [_lbTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.contentView.mas_centerY);
+        make.centerY.equalTo(self.contentView);
         make.left.equalTo(self.contentView).offset(UIWIDTH(21));
         make.height.mas_equalTo(lbtitleR.size.height);
         make.width.mas_equalTo(lbtitleR.size.width + 0.5);
@@ -39,13 +39,12 @@
             [self.contentView addSubview:_lineView];
             [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.equalTo(self.contentView).offset(UIWIDTH(30));
-                make.right.equalTo(self.contentView.mas_right);
+                make.right.equalTo(self.contentView);
                 make.height.mas_equalTo(1);
-                make.bottom.equalTo(self.contentView.mas_bottom);
+                make.bottom.equalTo(self.contentView);
             }];
-            _lineView.backgroundColor = [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:1];
-        }
-        
+            _lineView.backgroundColor = CELL_LINE_COLOR;
+        } 
     }
     return self;
 }

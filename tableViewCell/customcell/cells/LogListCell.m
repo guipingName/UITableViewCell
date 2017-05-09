@@ -26,7 +26,6 @@
     self.lbSubTitle2.text = model.subTitle2;
     _lbDeviceId.text = model.deviceId;
     
-    
     self.lbSubTitle2.textColor = [UIColor blackColor];
     self.lbTitle.textColor = [UIColor whiteColor];
     self.lbSubTitle.textColor = [UIColor whiteColor];
@@ -42,7 +41,7 @@
         make.height.mas_equalTo(lbTitleR.size.height);
     }];
     [self.lbSubTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.lbTitle.mas_left);
+        make.left.equalTo(self.lbTitle);
         make.top.equalTo(self.lbTitle.mas_bottom);
         make.width.mas_equalTo(lbSubTitleR.size.width + 0.5);
         make.height.mas_equalTo(lbSubTitleR.size.height);
@@ -52,7 +51,7 @@
     CGRect lbDeviceIdR = LABEL_RECT(_lbDeviceId.text, 0, 0, 1, 14);
     CGRect lbSubTitle2R = LABEL_RECT(self.lbSubTitle2.text, 0, 0, 1, 14);
     [_lbDeviceId mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.lbTitle.mas_left);
+        make.left.equalTo(self.lbTitle);
         make.bottom.equalTo(self.contentView).offset(-10);
         make.width.mas_equalTo(lbDeviceIdR.size.width + 0.5);
         make.height.mas_equalTo(lbDeviceIdR.size.height);
@@ -60,7 +59,7 @@
     }];
     
     [self.lbSubTitle2 mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.lbTitle.mas_left);
+        make.left.equalTo(self.lbTitle);
         make.bottom.equalTo(_lbDeviceId.mas_top);
         make.width.mas_equalTo(lbSubTitle2R.size.width + 0.5);
         make.height.mas_equalTo(lbSubTitle2R.size.height);
@@ -87,7 +86,7 @@
             line = [[UIView alloc] init];
             [self.contentView addSubview:line];
             [line mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.equalTo(self.contentView.mas_left).offset(UIWIDTH(181));
+                make.left.equalTo(self.contentView).offset(UIWIDTH(181));
                 make.top.bottom.equalTo(self.contentView);
                 make.width.mas_equalTo(1);
             }];
@@ -98,7 +97,7 @@
         [self.rightImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView).offset(10);
             make.height.width.mas_equalTo(UIWIDTH(62));
-            make.centerX.equalTo(line.mas_centerX);
+            make.centerX.equalTo(line);
         }];
         self.rightImageView.layer.cornerRadius = UIWIDTH(31);
         self.rightImageView.layer.borderWidth = 1;

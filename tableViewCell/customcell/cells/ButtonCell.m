@@ -28,7 +28,7 @@
             _rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
             [self.contentView addSubview:_rightButton];
             [_rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.centerY.equalTo(self.contentView.mas_centerY);
+                make.centerY.equalTo(self.contentView);
                 make.right.equalTo(self.contentView).offset(-UIWIDTH(18));
                 make.height.mas_equalTo(30);
                 make.width.mas_equalTo(30);

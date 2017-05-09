@@ -29,7 +29,7 @@
     self.lbTitle.font = [UIFont systemFontOfSize:18];
     CGRect lbTitleR = LABEL_RECT(self.lbTitle.text, 0, 0, 1, 18);
     [self.lbTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.bgImageView.mas_left).offset(UIWIDTH(21));
+        make.left.equalTo(self.bgImageView).offset(UIWIDTH(21));
         make.bottom.equalTo(self.bgImageView.mas_centerY);
         make.height.mas_equalTo(lbTitleR.size.height);
         make.width.mas_equalTo(lbTitleR.size.width + 0.5);
@@ -129,7 +129,7 @@
         self.bgImageView.layer.masksToBounds = YES;
         
         [self.rightImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self.contentView.mas_centerY).offset(-10);
+            make.centerY.equalTo(self.contentView).offset(-10);
             make.right.equalTo(self.contentView).offset(-UIWIDTH(51));
             make.height.mas_equalTo(30);
             make.width.mas_equalTo(30);

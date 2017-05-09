@@ -20,7 +20,7 @@
     
     CGRect lbtitleR = LABEL_RECT(self.lbTitle.text, 0, 0, 1, 18);
     [self.lbTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.contentView.mas_centerY);
+        make.centerY.equalTo(self.contentView);
         make.left.equalTo(self.bgImageView.mas_right).offset(5);
         make.height.mas_equalTo(lbtitleR.size.height);
         make.width.mas_equalTo(lbtitleR.size.width + 0.5);
@@ -37,7 +37,7 @@
             [_bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.equalTo(self.contentView).offset(UIWIDTH(26));
                 make.height.width.mas_equalTo(40);
-                make.centerY.equalTo(self.contentView.mas_centerY);
+                make.centerY.equalTo(self.contentView);
             }];
             //_bgImageView.backgroundColor = THEME_COLOR;
             self.bgImageView.layer.cornerRadius = 20;

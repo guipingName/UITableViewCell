@@ -37,7 +37,7 @@
             make.width.mas_equalTo(lbtitleR.size.width + 0.5);
         }];
         [_lbSubTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.lbTitle.mas_left);
+            make.left.equalTo(self.lbTitle);
             make.top.equalTo(self.lbTitle.mas_bottom);
             make.height.mas_equalTo(lbSubTitleR.size.height);
             make.width.mas_equalTo(lbSubTitleR.size.width + 0.5);
@@ -73,14 +73,14 @@
             [self.contentView addSubview:_rightImageView];
             [_rightImageView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.height.width.mas_equalTo(26);
-                make.centerY.equalTo(self.contentView.mas_centerY);
+                make.centerY.equalTo(self.contentView);
                 make.right.equalTo(self.contentView).offset(-UIWIDTH(22));
             }];
             _rightImageView.image = [[UIImage imageNamed:@"标签_右箭头"] rt_tintedImageWithColor:[UIColor colorWithRed:128/255.0 green:128/255.0 blue:128/255.0 alpha:1]];
             
             [_rightButton mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.height.width.mas_equalTo(10);
-                make.centerY.equalTo(self.contentView.mas_centerY);
+                make.centerY.equalTo(self.contentView);
                 make.right.equalTo(_rightImageView.mas_left);
             }];
         }
