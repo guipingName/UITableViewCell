@@ -20,8 +20,6 @@
     return UIHEIGHT(160);
 }
 
-
-
 -(void)initWithData:(id)cellModel{
     GPModel *model = cellModel;
     currentModel = model;
@@ -106,7 +104,7 @@
             make.bottom.equalTo(self.contentView.mas_centerY).offset((lbTitleR.size.height + lbSubTitleR.size.height + 2) / 2);
         }];
     }
-    else {
+    else { // 三行文字
         [self.lbSubTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(UIWIDTH(141));
             make.width.mas_equalTo(lbSubTitleR.size.width + 0.5);
@@ -173,7 +171,6 @@
     attachment.bounds = CGRectMake(0, 0, rectR.size.height - 2, rectR.size.height - 2);
     NSAttributedString *imageAttr = [NSAttributedString attributedStringWithAttachment:attachment];
     
-    
     NSTextAttachment *attachment1 = [[NSTextAttachment alloc] init];
     attachment1.image = [[UIImage imageNamed:@"i8_湿度"] rt_tintedImageWithColor:[UIColor grayColor]];
     attachment1.bounds = CGRectMake(0, 0, rectR.size.height - 2, rectR.size.height - 2);
@@ -187,6 +184,7 @@
     [mutableAttr appendAttributedString:imageAttr1];
     [mutableAttr appendAttributedString:textAttr1];
     _lbSubTitle2.attributedText = mutableAttr;
+    
     return rectR;
 }
 

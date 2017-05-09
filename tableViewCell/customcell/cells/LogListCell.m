@@ -22,12 +22,12 @@
     self.lbSubTitle2.text = model.subTitle2;
     _lbDeviceId.text = model.deviceId;
     
-    CGRect lbTitleR = LABEL_RECT(self.lbTitle.text, 0, 0, 1, 16);
-    CGRect lbSubTitleR = LABEL_RECT(self.lbSubTitle.text, 0, 0, 1, 14);
+    CGRect lbTitleR = LABEL_RECT(self.lbTitle.text, 0, 0, 1, 14);
+    CGRect lbSubTitleR = LABEL_RECT(self.lbSubTitle.text, 0, 0, 1, 12);
     
     [self.lbTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).offset(UIWIDTH(223));
-        make.top.equalTo(self.contentView).offset(10);
+        make.top.equalTo(self.contentView).offset(5);
         make.width.mas_equalTo(lbTitleR.size.width + 0.5);
         make.height.mas_equalTo(lbTitleR.size.height);
     }];
@@ -38,11 +38,11 @@
         make.height.mas_equalTo(lbSubTitleR.size.height);
     }];
     
-    CGRect lbDeviceIdR = LABEL_RECT(_lbDeviceId.text, 0, 0, 1, 14);
-    CGRect lbSubTitle2R = LABEL_RECT(self.lbSubTitle2.text, 0, 0, 1, 14);
+    CGRect lbDeviceIdR = LABEL_RECT(_lbDeviceId.text, 0, 0, 1, 12);
+    CGRect lbSubTitle2R = LABEL_RECT(self.lbSubTitle2.text, 0, 0, 1, 12);
     [_lbDeviceId mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.lbTitle);
-        make.bottom.equalTo(self.contentView).offset(-10);
+        make.bottom.equalTo(self.contentView).offset(-5);
         make.width.mas_equalTo(lbDeviceIdR.size.width + 0.5);
         make.height.mas_equalTo(lbDeviceIdR.size.height);
     }];
@@ -95,10 +95,10 @@
         label.textAlignment = NSTextAlignmentCenter;
         label.textColor = [UIColor whiteColor];
         
-        self.lbTitle.font = [UIFont systemFontOfSize:16];
-        self.lbSubTitle.font = [UIFont systemFontOfSize:14];
-        self.lbSubTitle2.font = [UIFont systemFontOfSize:14];
-        _lbDeviceId.font = [UIFont systemFontOfSize:14];
+        self.lbTitle.font = [UIFont systemFontOfSize:14];
+        self.lbSubTitle.font = [UIFont systemFontOfSize:12];
+        self.lbSubTitle2.font = [UIFont systemFontOfSize:12];
+        _lbDeviceId.font = [UIFont systemFontOfSize:12];
         
         self.lbTitle.textColor = [UIColor whiteColor];
         self.lbSubTitle.textColor = [UIColor whiteColor];

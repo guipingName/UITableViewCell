@@ -30,7 +30,6 @@
         self.lbSubTitle.font = [UIFont systemFontOfSize:15];
         CGRect lbSubTitleR = LABEL_RECT(self.lbSubTitle.text, 0, 0, 1, 15);
         
-        
         [self.lbSubTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self.contentView);
             make.bottom.equalTo(self.contentView).offset(-UIHEIGHT(28));
@@ -55,7 +54,6 @@
         [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     }
     self.rightImageView.backgroundColor = [UIColor whiteColor];
-    
     
     self.lbTitle.font = [UIFont systemFontOfSize:15];
     CGRect lbTitleR = LABEL_RECT(self.lbTitle.text, 0, 0, 1, 15);
@@ -94,7 +92,6 @@
         }];
         self.bgImageView.backgroundColor = THEME_COLOR;
         self.bgImageView.layer.cornerRadius = 0;
-        
         
         [self.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(self.contentView);
