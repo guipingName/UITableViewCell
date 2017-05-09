@@ -10,11 +10,9 @@
 
 @interface EletricCell : TwoImageViewsLabelCell
 
-@property (nonatomic, strong) UIImageView *moreView;
-
 @property (nonatomic, strong) UILabel *lbCrest;
 @property (nonatomic, strong) UILabel *lbValley;
 
-@property (nonatomic, strong) UILabel *month;
+@property (nonatomic, strong) UILabel *lbMonth;
 
 @end

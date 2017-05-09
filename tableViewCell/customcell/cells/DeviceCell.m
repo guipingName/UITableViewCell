@@ -195,8 +195,7 @@
     self.bgImageView.backgroundColor = [UIColor whiteColor];
     UIColor *color = THEME_COLOR;
     self.bgImageView.image = [[UIImage imageNamed:imageName] rt_tintedImageWithColor:color];
-    self.lbSubTitle.font = [UIFont systemFontOfSize:12];
-    CGRect lbSubR = LABEL_RECT(self.lbSubTitle.text, 0, 0, 1, 12);
+    
     [self.bgImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).offset(UIWIDTH(193));
         make.height.mas_equalTo(50);
@@ -213,11 +212,15 @@
         make.bottom.equalTo(self.contentView);
     }];
     
+    self.lbSubTitle.font = [UIFont systemFontOfSize:12];
+    CGRect lbSubR = LABEL_RECT(self.lbSubTitle.text, 0, 0, 1, 12);
+    
     if (!currentModel.isThreeRow) {
+        CGRect titR = [self attributedLbtitle];
         [self.lbTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(UIWIDTH(280));
-            make.width.mas_equalTo(titleR.size.width + 0.5);
-            make.height.mas_equalTo(titleR.size.height);
+            make.width.mas_equalTo(titR.size.width + 0.5);
+            make.height.mas_equalTo(titR.size.height);
             make.top.equalTo(self.contentView.mas_centerY).offset(-(titleR.size.height + lbSubR.size.height + 2) / 2);
         }];
     }

@@ -85,10 +85,8 @@
         self.lbSubTitle.layer.borderWidth = 1;
         self.lbSubTitle.layer.borderColor = [UIColor colorWithRed:217/255.0 green:217/255.0 blue:217/255.0 alpha:217/255.0].CGColor;
         
-        
         self.lbSubTitle2.font = [UIFont systemFontOfSize:12];
         self.lbSubTitle2.textColor = [UIColor grayColor];
-        
         
         [self.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(UIWIDTH(30));

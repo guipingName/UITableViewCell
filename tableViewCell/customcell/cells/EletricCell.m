@@ -10,6 +10,10 @@
 
 @implementation EletricCell{
     NSMutableArray *monthArray;
+    UIView *view0;
+    UIView *view1;
+    UIView *view2;
+    UIView *view3;
 }
 
 +(CGFloat)getCellHeightWithCellStyle:(GPModel *)cellModel{
@@ -20,7 +24,7 @@
     GPModel *model = cellModel;
     _lbCrest.text = [NSString stringWithFormat:@"峰电%@", model.electricCrest];
     _lbValley.text = [NSString stringWithFormat:@"谷电%@", model.electricValley];
-    _month.text = [NSString stringWithFormat:@"%ld月", (long)model.month];
+    _lbMonth.text = [NSString stringWithFormat:@"%ld月", (long)model.month];
     if (model.month % 2) {
         self.rightImageView.backgroundColor = THEME_COLOR;
     }
@@ -28,9 +32,9 @@
         self.rightImageView.backgroundColor = [UIColor colorWithRed:0/255.0 green:139/255.0 blue:180/255.0 alpha:1];
     }
     UIColor *color = THEME_COLOR;
-    CGRect lbMonthR = [self attributedLabel:_month str:@"月" size1:16 color1:color size2:10 color2:color];
+    CGRect lbMonthR = [self attributedLabel:_lbMonth str:@"月" size1:16 color1:color size2:10 color2:color];
     self.bgImageView.image = [[UIImage imageNamed:@"日历"] rt_tintedImageWithColor:color];
-    [_month mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_lbMonth mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.bgImageView).offset(3);
         make.centerX.equalTo(self.bgImageView);
         make.height.mas_equalTo(lbMonthR.size.height);
@@ -109,47 +113,18 @@
     fourthWeek /= total;
     
     //NSLog(@"%f %f %f %f", firstWeek, secondWeek, thirdWeek, fourthWeek);
-    
-    UIView *view0 = [[UIView alloc] init];
-    [_moreView addSubview:view0];
-    [view0 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_moreView);
-        make.bottom.equalTo(_moreView);
-        make.width.mas_equalTo(UIWIDTH(10));
+    [view0 mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(UIHEIGHT(9) + UIHEIGHT(80) * firstWeek);
     }];
-    
-    UIView *view1 = [[UIView alloc] init];
-    [_moreView addSubview:view1];
-    [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_moreView).offset(UIWIDTH(20));;
-        make.bottom.equalTo(_moreView);
-        make.width.mas_equalTo(UIWIDTH(10));
+    [view1 mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(UIHEIGHT(9) + UIHEIGHT(80) * secondWeek);
     }];
-    
-    UIView *view2 = [[UIView alloc] init];
-    [_moreView addSubview:view2];
-    [view2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_moreView).offset(UIWIDTH(40));
-        make.bottom.equalTo(_moreView);
-        make.width.mas_equalTo(UIWIDTH(10));
+    [view2 mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(UIHEIGHT(9) + UIHEIGHT(80) * thirdWeek);
     }];
-    
-    UIView *view3 = [[UIView alloc] init];
-    [_moreView addSubview:view3];
-    [view3 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_moreView).offset(UIWIDTH(60));;
-        make.bottom.equalTo(_moreView);
-        make.width.mas_equalTo(UIWIDTH(10));
+    [view3 mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(UIHEIGHT(9) + UIHEIGHT(80) * fourthWeek);
     }];
-    UIColor *color = [UIColor colorWithRed:128/255.0 green:128/255.0 blue:128/255.0 alpha:1];
-    view0.backgroundColor = color;
-    view1.backgroundColor = color;
-    view2.backgroundColor = color;
-    view3.backgroundColor = THEME_COLOR;
 }
 
 
@@ -163,7 +138,6 @@
         }];
         self.lineView.backgroundColor = [UIColor colorWithRed:200/255.0 green:199/255.0 blue:204/255.0 alpha:1];
         
-        
         [self.bgImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(self.contentView);
             make.left.equalTo(self.contentView).offset(UIWIDTH(14));
@@ -173,30 +147,66 @@
         self.bgImageView.layer.cornerRadius = 0;
         self.bgImageView.layer.masksToBounds = NO;
         self.bgImageView.backgroundColor = [UIColor clearColor];
-        
-        
-        if (!_month) {
-            _month = [[UILabel alloc] init];
-            [self.bgImageView addSubview:_month];
+                
+        if (!_lbMonth) {
+            _lbMonth = [[UILabel alloc] init];
+            [self.bgImageView addSubview:_lbMonth];
         }
-        
-        if (!_moreView) {
-            _moreView = [[UIImageView alloc] init];
-            [self.contentView addSubview:_moreView];
-            [_moreView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.top.equalTo(self.contentView).offset(UIHEIGHT(11));
-                make.width.mas_equalTo(UIWIDTH(70));
-                make.bottom.equalTo(self.contentView).offset(-UIHEIGHT(11));
-                make.left.equalTo(self.contentView).offset(UIWIDTH(412));
-            }];
+        if (!view0) {
+            view0 = [[UIView alloc] init];
+            [self.contentView addSubview:view0];
         }
+        [view0 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.contentView).offset(UIWIDTH(412));
+            make.bottom.equalTo(self.contentView).offset(-UIHEIGHT(11));
+            make.width.mas_equalTo(UIWIDTH(10));
+            make.height.mas_equalTo(UIHEIGHT(9));
+        }];
+        
+        if (!view1) {
+            view1 = [[UIView alloc] init];
+            [self.contentView addSubview:view1];
+        }
+        [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(view0.mas_right).offset(UIWIDTH(10));
+            make.bottom.equalTo(view0);
+            make.width.mas_equalTo(UIWIDTH(10));
+            make.height.mas_equalTo(UIHEIGHT(9));
+        }];
+        
+        if (!view2) {
+            view2 = [[UIView alloc] init];
+            [self.contentView addSubview:view2];
+        }
+        [view2 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(view1.mas_right).offset(UIWIDTH(10));
+            make.bottom.equalTo(view0);
+            make.width.mas_equalTo(UIWIDTH(10));
+            make.height.mas_equalTo(UIHEIGHT(9));
+        }];
+        
+        if (!view3) {
+            view3 = [[UIView alloc] init];
+            [self.contentView addSubview:view3];
+        }
+        [view3 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(view2.mas_right).offset(UIWIDTH(10));
+            make.bottom.equalTo(view0);
+            make.width.mas_equalTo(UIWIDTH(10));
+            make.height.mas_equalTo(UIHEIGHT(9));
+        }];
+        UIColor *color = [UIColor colorWithRed:128/255.0 green:128/255.0 blue:128/255.0 alpha:1];
+        view0.backgroundColor = color;
+        view1.backgroundColor = color;
+        view2.backgroundColor = color;
+        view3.backgroundColor = THEME_COLOR;
         
         [self.rightImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self.contentView).offset(-UIWIDTH(20));
             make.centerY.equalTo(self.contentView);
             make.height.width.mas_equalTo(UIWIDTH(100));
         }];
-        self.rightImageView.image = [UIImage imageNamed:@""];
+        self.rightImageView.image = nil;
         self.rightImageView.layer.cornerRadius = UIWIDTH(50);
         
         if (!_lbCrest) {

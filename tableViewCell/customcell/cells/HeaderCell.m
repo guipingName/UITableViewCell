@@ -59,14 +59,8 @@
         }];
     }
     
-    // 显示右侧箭头
+    // 显示右侧箭头 调整按钮位置
     if (model.subTitle3) {
-        [self.rightImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.height.width.mas_equalTo(26);
-            make.centerY.equalTo(self.contentView);
-            make.right.equalTo(self.contentView).offset(-UIWIDTH(22));
-        }];
-        
         [_rightButton mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.height.width.mas_equalTo(10);
             make.centerY.equalTo(self.contentView);
@@ -101,14 +95,14 @@
         [self.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(self.contentView);
             make.height.mas_equalTo(1);
-            make.bottom.equalTo(self.contentView.mas_bottom);
+            make.bottom.equalTo(self.contentView);
         }];
         if (!_rightButton) {
             _rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
             [self.contentView addSubview:_rightButton];
             [_rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.height.width.mas_equalTo(10);
-                make.centerY.equalTo(self.contentView.mas_centerY);
+                make.centerY.equalTo(self.contentView);
                 make.right.equalTo(self.contentView).offset(-UIWIDTH(35));
             }];
         }
